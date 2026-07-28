@@ -63,6 +63,14 @@
         </foreach>
         AND `status` = 1
     </update>
+    <update id="timeoutClose">
+        UPDATE oms_order
+        SET `status` = 4,
+            modify_time = now()
+        WHERE id = #{id}
+          AND `status` = 0
+          AND delete_status = 0
+    </update>
     <select id="getDetail" resultMap="orderDetailResultMap">
         SELECT o.*,
             oi.id item_id,

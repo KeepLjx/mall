@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.macro.mall.dao.OmsOrderDao;
 import com.macro.mall.dao.OmsOrderOperateHistoryDao;
 import com.macro.mall.dto.*;
+import com.macro.mall.common.exception.ApiException;
 import com.macro.mall.mapper.OmsOrderMapper;
 import com.macro.mall.mapper.OmsOrderOperateHistoryMapper;
 import com.macro.mall.model.OmsOrder;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * è®¢å•ç®¡ç†Serviceå®ç°ç±»
+ * ¶©µ¥¹ÜÀíServiceÊµÏÖÀà
  * Created by macro on 2018/10/11.
  */
 @Service
@@ -40,17 +41,17 @@ public class OmsOrderServiceImpl implements OmsOrderService {
 
     @Override
     public int delivery(List<OmsOrderDeliveryParam> deliveryParamList) {
-        //æ‰¹é‡å‘è´§
+        //ÅúÁ¿·¢»õ
         int count = orderDao.delivery(deliveryParamList);
-        //æ·»åŠ æ“ä½œè®°å½•
+        //Ìí¼Ó²Ù×÷¼ÇÂ¼
         List<OmsOrderOperateHistory> operateHistoryList = deliveryParamList.stream()
                 .map(omsOrderDeliveryParam -> {
                     OmsOrderOperateHistory history = new OmsOrderOperateHistory();
                     history.setOrderId(omsOrderDeliveryParam.getOrderId());
                     history.setCreateTime(new Date());
-                    history.setOperateMan("åå°ç®¡ç†å‘˜");
+                    history.setOperateMan("ºóÌ¨¹ÜÀíÔ±");
                     history.setOrderStatus(2);
-                    history.setNote("å®Œæˆå‘è´§");
+                    history.setNote("Íê³É·¢»õ");
                     return history;
                 }).collect(Collectors.toList());
         orderOperateHistoryDao.insertList(operateHistoryList);
@@ -68,12 +69,30 @@ public class OmsOrderServiceImpl implements OmsOrderService {
             OmsOrderOperateHistory history = new OmsOrderOperateHistory();
             history.setOrderId(orderId);
             history.setCreateTime(new Date());
-            history.setOperateMan("åå°ç®¡ç†å‘˜");
+            history.setOperateMan("ºóÌ¨¹ÜÀíÔ±");
             history.setOrderStatus(4);
-            history.setNote("è®¢å•å…³é—­:"+note);
+            history.setNote("¶©µ¥¹Ø±Õ:"+note);
             return history;
         }).collect(Collectors.toList());
         orderOperateHistoryDao.insertList(historyList);
+        return count;
+    }
+
+    @Override
+    public int timeoutClose(OmsOrderTimeoutCloseParam param) {
+        // CAS ¸üĞÂ£º½öµ± status = 0£¨´ı¸¶¿î£©ÇÒ delete_status = 0 Ê±ÔÊĞí¹Ø±Õ£¬·ÀÖ¹²¢·¢ÖØ¸´¹Ø±Õ
+        int count = orderDao.timeoutClose(param.getOrderId());
+        if (count == 0) {
+            throw new ApiException("¶©µ¥²»´æÔÚ»ò×´Ì¬²»ÔÊĞí³¬Ê±¹Ø±Õ£¨½ö´ı¸¶¿î×´Ì¬¿É¹Ø±Õ£©");
+        }
+        // ¼ÇÂ¼²Ù×÷ÀúÊ·
+        OmsOrderOperateHistory history = new OmsOrderOperateHistory();
+        history.setOrderId(param.getOrderId());
+        history.setCreateTime(new Date());
+        history.setOperateMan(param.getSource() != null ? param.getSource() : "ÏµÍ³");
+        history.setOrderStatus(4);
+        history.setNote("³¬Ê±×Ô¶¯¹Ø±Õ:" + (param.getNote() != null ? param.getNote() : "³¬Ê±Î´Ö§¸¶"));
+        orderOperateHistoryDao.insertList(List.of(history));
         return count;
     }
 
@@ -104,13 +123,13 @@ public class OmsOrderServiceImpl implements OmsOrderService {
         order.setReceiverRegion(receiverInfoParam.getReceiverRegion());
         order.setModifyTime(new Date());
         int count = orderMapper.updateByPrimaryKeySelective(order);
-        //æ’å…¥æ“ä½œè®°å½•
+        //²åÈë²Ù×÷¼ÇÂ¼
         OmsOrderOperateHistory history = new OmsOrderOperateHistory();
         history.setOrderId(receiverInfoParam.getOrderId());
         history.setCreateTime(new Date());
-        history.setOperateMan("åå°ç®¡ç†å‘˜");
+        history.setOperateMan("ºóÌ¨¹ÜÀíÔ±");
         history.setOrderStatus(receiverInfoParam.getStatus());
-        history.setNote("ä¿®æ”¹æ”¶è´§äººä¿¡æ¯");
+        history.setNote("ĞŞ¸ÄÊÕ»õÈËĞÅÏ¢");
         orderOperateHistoryMapper.insert(history);
         return count;
     }
@@ -123,13 +142,13 @@ public class OmsOrderServiceImpl implements OmsOrderService {
         order.setDiscountAmount(moneyInfoParam.getDiscountAmount());
         order.setModifyTime(new Date());
         int count = orderMapper.updateByPrimaryKeySelective(order);
-        //æ’å…¥æ“ä½œè®°å½•
+        //²åÈë²Ù×÷¼ÇÂ¼
         OmsOrderOperateHistory history = new OmsOrderOperateHistory();
         history.setOrderId(moneyInfoParam.getOrderId());
         history.setCreateTime(new Date());
-        history.setOperateMan("åå°ç®¡ç†å‘˜");
+        history.setOperateMan("ºóÌ¨¹ÜÀíÔ±");
         history.setOrderStatus(moneyInfoParam.getStatus());
-        history.setNote("ä¿®æ”¹è´¹ç”¨ä¿¡æ¯");
+        history.setNote("ĞŞ¸Ä·ÑÓÃĞÅÏ¢");
         orderOperateHistoryMapper.insert(history);
         return count;
     }
@@ -144,9 +163,9 @@ public class OmsOrderServiceImpl implements OmsOrderService {
         OmsOrderOperateHistory history = new OmsOrderOperateHistory();
         history.setOrderId(id);
         history.setCreateTime(new Date());
-        history.setOperateMan("åå°ç®¡ç†å‘˜");
+        history.setOperateMan("ºóÌ¨¹ÜÀíÔ±");
         history.setOrderStatus(status);
-        history.setNote("ä¿®æ”¹å¤‡æ³¨ä¿¡æ¯ï¼š"+note);
+        history.setNote("ĞŞ¸Ä±¸×¢ĞÅÏ¢£º"+note);
         orderOperateHistoryMapper.insert(history);
         return count;
     }

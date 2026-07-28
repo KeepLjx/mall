@@ -7,52 +7,58 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * è®¢å•ç®¡ç†Service
+ * ¶©µ¥¹ÜÀíService
  * Created by macro on 2018/10/11.
  */
 public interface OmsOrderService {
     /**
-     * åˆ†é¡µæŸ¥è¯¢è®¢å•
+     * ·ÖÒ³²éÑ¯¶©µ¥
      */
     List<OmsOrder> list(OmsOrderQueryParam queryParam, Integer pageSize, Integer pageNum);
 
     /**
-     * æ‰¹é‡å‘è´§
+     * ÅúÁ¿·¢»õ
      */
     @Transactional
     int delivery(List<OmsOrderDeliveryParam> deliveryParamList);
 
     /**
-     * æ‰¹é‡å…³é—­è®¢å•
+     * ÅúÁ¿¹Ø±Õ¶©µ¥
      */
     @Transactional
     int close(List<Long> ids, String note);
 
     /**
-     * æ‰¹é‡åˆ é™¤è®¢å•
+     * ÅúÁ¿É¾³ı¶©µ¥
      */
     int delete(List<Long> ids);
 
     /**
-     * è·å–æŒ‡å®šè®¢å•è¯¦æƒ…
+     * »ñÈ¡Ö¸¶¨¶©µ¥ÏêÇé
      */
     OmsOrderDetail detail(Long id);
 
     /**
-     * ä¿®æ”¹è®¢å•æ”¶è´§äººä¿¡æ¯
+     * ĞŞ¸Ä¶©µ¥ÊÕ»õÈËĞÅÏ¢
      */
     @Transactional
     int updateReceiverInfo(OmsReceiverInfoParam receiverInfoParam);
 
     /**
-     * ä¿®æ”¹è®¢å•è´¹ç”¨ä¿¡æ¯
+     * ĞŞ¸Ä¶©µ¥·ÑÓÃĞÅÏ¢
      */
     @Transactional
     int updateMoneyInfo(OmsMoneyInfoParam moneyInfoParam);
 
     /**
-     * ä¿®æ”¹è®¢å•å¤‡æ³¨
+     * ĞŞ¸Ä¶©µ¥±¸×¢
      */
     @Transactional
     int updateNote(Long id, String note, Integer status);
+
+    /**
+     * ³¬Ê±¹Ø±Õ¶©µ¥£¨½ö¹Ø±Õ´ı¸¶¿î¶©µ¥£¬CAS ·À²¢·¢£©
+     */
+    @Transactional
+    int timeoutClose(OmsOrderTimeoutCloseParam param);
 }

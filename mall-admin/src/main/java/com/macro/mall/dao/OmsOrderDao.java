@@ -9,22 +9,27 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 璁㈠崟鏌ヨ鑷畾涔塂ao
+ * 订单查询自定义Dao
  * Created by macro on 2018/10/12.
  */
 public interface OmsOrderDao {
     /**
-     * 鏉′欢鏌ヨ璁㈠崟
+     * 条件查询订单
      */
     List<OmsOrder> getList(@Param("queryParam") OmsOrderQueryParam queryParam);
 
     /**
-     * 鎵归噺鍙戣揣
+     * 批量发货
      */
     int delivery(@Param("list") List<OmsOrderDeliveryParam> deliveryParamList);
 
     /**
-     * 鑾峰彇璁㈠崟璇︽儏
+     * 获取订单详情
      */
     OmsOrderDetail getDetail(@Param("id") Long id);
+
+    /**
+     * 超时关闭订单（CAS: 仅关闭待付款状态的订单，防止并发重复关闭）
+     */
+    int timeoutClose(@Param("id") Long id);
 }
