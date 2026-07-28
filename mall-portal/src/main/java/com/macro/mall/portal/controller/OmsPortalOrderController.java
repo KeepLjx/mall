@@ -112,4 +112,12 @@ public class OmsPortalOrderController {
         portalOrderService.deleteOrder(orderId);
         return CommonResult.success(null);
     }
+
+    @Operation(summary = "订单超时自动关闭")
+    @RequestMapping(value = "/closeTimeOutOrder", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult closeTimeOutOrder(Long orderId) {
+        portalOrderService.closeTimeOutOrder(orderId);
+        return CommonResult.success(null);
+    }
 }

@@ -69,6 +69,12 @@ public interface OmsPortalOrderService {
     void deleteOrder(Long orderId);
 
     /**
+     * 超时自动关闭订单
+     */
+    @Transactional
+    void closeTimeOutOrder(Long orderId);
+
+    /**
      * 根据orderSn来实现的支付成功逻辑
      */
     @Transactional

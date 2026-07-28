@@ -1,29 +1,64 @@
 package com.macro.mall.portal.service.impl;
 
-import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.collection.CollUtil;
-import com.github.pagehelper.PageHelper;
-import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.exception.Asserts;
-import com.macro.mall.common.service.RedisService;
-import com.macro.mall.mapper.*;
-import com.macro.mall.model.*;
-import com.macro.mall.portal.component.CancelOrderSender;
-import com.macro.mall.portal.dao.PortalOrderDao;
-import com.macro.mall.portal.dao.PortalOrderItemDao;
-import com.macro.mall.portal.dao.SmsCouponHistoryDao;
-import com.macro.mall.portal.domain.*;
-import com.macro.mall.portal.service.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.stream.Collectors;
+import com.github.pagehelper.PageHelper;
+import com.macro.mall.common.api.CommonPage;
+import com.macro.mall.common.exception.Asserts;
+import com.macro.mall.common.service.RedisService;
+import com.macro.mall.mapper.OmsOrderItemMapper;
+import com.macro.mall.mapper.OmsOrderMapper;
+import com.macro.mall.mapper.OmsOrderOperateHistoryMapper;
+import com.macro.mall.mapper.OmsOrderSettingMapper;
+import com.macro.mall.mapper.PmsSkuStockMapper;
+import com.macro.mall.mapper.SmsCouponHistoryMapper;
+import com.macro.mall.mapper.UmsIntegrationConsumeSettingMapper;
+import com.macro.mall.model.OmsOrder;
+import com.macro.mall.model.OmsOrderExample;
+import com.macro.mall.model.OmsOrderItem;
+import com.macro.mall.model.OmsOrderItemExample;
+import com.macro.mall.model.OmsOrderOperateHistory;
+import com.macro.mall.model.OmsOrderSetting;
+import com.macro.mall.model.OmsOrderSettingExample;
+import com.macro.mall.model.PmsSkuStock;
+import com.macro.mall.model.SmsCoupon;
+import com.macro.mall.model.SmsCouponHistory;
+import com.macro.mall.model.SmsCouponHistoryExample;
+import com.macro.mall.model.SmsCouponProductCategoryRelation;
+import com.macro.mall.model.SmsCouponProductRelation;
+import com.macro.mall.model.UmsIntegrationConsumeSetting;
+import com.macro.mall.model.UmsMember;
+import com.macro.mall.model.UmsMemberReceiveAddress;
+import com.macro.mall.portal.component.CancelOrderSender;
+import com.macro.mall.portal.dao.PortalOrderDao;
+import com.macro.mall.portal.dao.PortalOrderItemDao;
+import com.macro.mall.portal.dao.SmsCouponHistoryDao;
+import com.macro.mall.portal.domain.CartPromotionItem;
+import com.macro.mall.portal.domain.ConfirmOrderResult;
+import com.macro.mall.portal.domain.OmsOrderDetail;
+import com.macro.mall.portal.domain.OrderParam;
+import com.macro.mall.portal.domain.SmsCouponHistoryDetail;
+import com.macro.mall.portal.service.OmsCartItemService;
+import com.macro.mall.portal.service.OmsPortalOrderService;
+import com.macro.mall.portal.service.UmsMemberCouponService;
+import com.macro.mall.portal.service.UmsMemberReceiveAddressService;
+import com.macro.mall.portal.service.UmsMemberService;
+
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollUtil;
 
 /**
  * 前台订单管理Service
@@ -65,6 +100,8 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     private OmsOrderItemMapper orderItemMapper;
     @Autowired
     private CancelOrderSender cancelOrderSender;
+    @Autowired
+    private OmsOrderOperateHistoryMapper orderOperateHistoryMapper;
 
     @Override
     public ConfirmOrderResult generateConfirmOrder(List<Long> cartIds) {
@@ -417,6 +454,55 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         }else{
             Asserts.fail("只能删除已完成或已关闭的订单！");
         }
+    }
+
+    @Override
+    public void closeTimeOutOrder(Long orderId) {
+        //查询订单
+        OmsOrder order = orderMapper.selectByPrimaryKey(orderId);
+        if (order == null) {
+            Asserts.fail("订单不存在");
+        }
+        if (order.getStatus() != 0) {
+            Asserts.fail("仅待付款订单可超时关闭");
+        }
+        //校验是否已超时
+        OmsOrderSetting orderSetting = orderSettingMapper.selectByPrimaryKey(1L);
+        long elapsedMinutes = (System.currentTimeMillis() - order.getCreateTime().getTime()) / (60 * 1000);
+        if (elapsedMinutes < orderSetting.getNormalOrderOvertime()) {
+            Asserts.fail("订单尚未超时，不可关闭");
+        }
+        //CAS更新：仅当status=0且deleteStatus=0时才更新，防止并发重复关闭
+        OmsOrderExample example = new OmsOrderExample();
+        example.createCriteria().andIdEqualTo(orderId).andStatusEqualTo(0).andDeleteStatusEqualTo(0);
+        OmsOrder updateOrder = new OmsOrder();
+        updateOrder.setStatus(4);
+        int count = orderMapper.updateByExampleSelective(updateOrder, example);
+        if (count <= 0) {
+            Asserts.fail("订单已被处理，无法重复关闭");
+        }
+        //释放库存锁定
+        OmsOrderItemExample orderItemExample = new OmsOrderItemExample();
+        orderItemExample.createCriteria().andOrderIdEqualTo(orderId);
+        List<OmsOrderItem> orderItemList = orderItemMapper.selectByExample(orderItemExample);
+        if (!CollectionUtils.isEmpty(orderItemList)) {
+            portalOrderDao.releaseSkuStockLock(orderItemList);
+        }
+        //归还优惠券
+        updateCouponStatus(order.getCouponId(), order.getMemberId(), 0);
+        //返还积分
+        if (order.getUseIntegration() != null) {
+            UmsMember member = memberService.getById(order.getMemberId());
+            memberService.updateIntegration(order.getMemberId(), member.getIntegration() + order.getUseIntegration());
+        }
+        //记录操作历史
+        OmsOrderOperateHistory history = new OmsOrderOperateHistory();
+        history.setOrderId(orderId);
+        history.setOperateMan("系统");
+        history.setOrderStatus(4);
+        history.setNote("订单超时自动关闭");
+        history.setCreateTime(new Date());
+        orderOperateHistoryMapper.insert(history);
     }
 
     @Override
