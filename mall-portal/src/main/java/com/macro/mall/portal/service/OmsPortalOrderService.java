@@ -44,7 +44,7 @@ public interface OmsPortalOrderService {
     void cancelOrder(Long orderId);
 
     /**
-     * ÂèëÈÄÅÂª∂ËøüÊ∂àÊÅØÂèñÊ∂àËÆ¢Âçï
+     * ÂèëÈÄÅÂª∂ËøüÊ∂àÊÅØÂèñÊ∂àËÆ¢Âç?
      */
     void sendDelayMessageCancelOrder(Long orderId);
 
@@ -73,4 +73,11 @@ public interface OmsPortalOrderService {
      */
     @Transactional
     void paySuccessByOrderSn(String orderSn, Integer payType);
+
+    /**
+     * ≥¨ ±∂©µ•◊‘∂Øπÿ±’£® π”√CAS‘≠◊”∏¸–¬∑¿≤¢∑¢÷ÿ∏¥πÿ±’£©
+     * @return ”∞œÏ–– ˝£¨>0 ±Ì æπÿ±’≥…π¶£¨0 ±Ì æ∂©µ•“—±ªπÿ±’ªÚ◊¥Ã¨≤ª‘ –Ìπÿ±’
+     */
+    @Transactional
+    Integer closeTimeoutOrder(Long orderId);
 }

@@ -334,6 +334,38 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     }
 
     @Override
+    public Integer closeTimeoutOrder(Long orderId) {
+        //参数校验
+        if(orderId==null){
+            Asserts.fail("订单ID不能为空");
+        }
+        //CAS原子更新：仅当status=0（待付款）且delete_status=0时更新为4（已关闭），防止并发重复关闭
+        int count = portalOrderDao.closeTimeoutOrder(orderId);
+        if (count == 0) {
+            return 0;
+        }
+        //关闭成功，执行后续清理操作
+        OmsOrder cancelOrder = orderMapper.selectByPrimaryKey(orderId);
+        if (cancelOrder != null) {
+            OmsOrderItemExample orderItemExample = new OmsOrderItemExample();
+            orderItemExample.createCriteria().andOrderIdEqualTo(orderId);
+            List<OmsOrderItem> orderItemList = orderItemMapper.selectByExample(orderItemExample);
+            //解除订单商品库存锁定
+            if (!CollectionUtils.isEmpty(orderItemList)) {
+                portalOrderDao.releaseSkuStockLock(orderItemList);
+            }
+            //修改优惠券使用状态
+            updateCouponStatus(cancelOrder.getCouponId(), cancelOrder.getMemberId(), 0);
+            //返还使用积分
+            if (cancelOrder.getUseIntegration() != null) {
+                UmsMember member = memberService.getById(cancelOrder.getMemberId());
+                memberService.updateIntegration(cancelOrder.getMemberId(), member.getIntegration() + cancelOrder.getUseIntegration());
+            }
+        }
+        return count;
+    }
+
+    @Override
     public void confirmReceiveOrder(Long orderId) {
         UmsMember member = memberService.getCurrentMember();
         OmsOrder order = orderMapper.selectByPrimaryKey(orderId);

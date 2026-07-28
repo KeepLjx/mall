@@ -12,29 +12,35 @@ import java.util.List;
  */
 public interface PortalOrderDao {
     /**
-     * 获取订单及下单商品详情
+     * 获取订单及下单商品详�?
      */
     OmsOrderDetail getDetail(@Param("orderId") Long orderId);
 
     /**
-     * 修改 pms_sku_stock表的锁定库存及真实库存
+     * 修改 pms_sku_stock表的锁定库存及真实库�?
      */
     int updateSkuStock(@Param("itemList") List<OmsOrderItem> orderItemList);
 
     /**
      * 获取超时订单
-     * @param minute 超时时间（分）
+     * @param minute 超时时间（分�?
      */
     List<OmsOrderDetail> getTimeOutOrders(@Param("minute") Integer minute);
 
     /**
-     * 批量修改订单状态
+     * 批量修改订单状�?
      */
     int updateOrderStatus(@Param("ids") List<Long> ids,@Param("status") Integer status);
 
     /**
-     * 解除取消订单的库存锁定
+     * 解除取消订单的库存锁�?
      */
     int releaseSkuStockLock(@Param("itemList") List<OmsOrderItem> orderItemList);
+
+    /**
+     * ʹ��CASԭ�Ӹ��¹رճ�ʱ����������״̬Ϊ������ʱ�رգ�
+     * @return Ӱ��������>0 ��ʾ�رճɹ���0 ��ʾ�ѱ������̹߳رջ򶩵�״̬�ѱ��
+     */
+    int closeTimeoutOrder(@Param("orderId") Long orderId);
 
 }

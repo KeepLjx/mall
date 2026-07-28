@@ -88,4 +88,14 @@
             #{item.productSkuId}
         </foreach>
     </update>
+
+    <!-- CAS原子更新：仅当订单状态为待付款(0)且未删除时才关闭为已关闭(4) -->
+    <update id="closeTimeoutOrder">
+        UPDATE oms_order
+        SET status = 4,
+            modify_time = NOW()
+        WHERE id = #{orderId}
+          AND status = 0
+          AND delete_status = 0
+    </update>
 </mapper>

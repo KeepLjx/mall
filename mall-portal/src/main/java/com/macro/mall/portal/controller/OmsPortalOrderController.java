@@ -37,7 +37,7 @@ public class OmsPortalOrderController {
         return CommonResult.success(confirmOrderResult);
     }
 
-    @Operation(summary = "根据购物车信息生成订单")
+    @Operation(summary = "根据购物车信息生成订�?")
     @RequestMapping(value = "/generateOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult generateOrder(@RequestBody OrderParam orderParam) {
@@ -45,7 +45,7 @@ public class OmsPortalOrderController {
         return CommonResult.success(result, "下单成功");
     }
 
-    @Operation(summary = "用户支付成功的回调")
+    @Operation(summary = "用户支付成功的回�?")
     @RequestMapping(value = "/paySuccess", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult paySuccess(@RequestParam Long orderId,@RequestParam Integer payType) {
@@ -69,8 +69,19 @@ public class OmsPortalOrderController {
         return CommonResult.success(null);
     }
 
-    @Operation(summary = "按状态分页获取用户订单列表")
-    @Parameter(name = "status", description = "订单状态：-1->全部；0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭",
+    @Operation(summary = "��ʱ�����Զ��ر�")
+    @RequestMapping(value = "/closeTimeoutOrder", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult closeTimeoutOrder(@RequestParam Long orderId) {
+        Integer count = portalOrderService.closeTimeoutOrder(orderId);
+        if (count > 0) {
+            return CommonResult.success(count, "�����رճɹ�");
+        }
+        return CommonResult.failed("���������ڡ��ѹرջ�״̬�������ر�");
+    }
+
+    @Operation(summary = "按状态分页获取用户订单列�?")
+    @Parameter(name = "status", description = "订单状态：-1->全部�?0->待付款；1->待发货；2->已发货；3->已完成；4->已关�?",
             in = ParameterIn.QUERY, schema = @Schema(type = "integer",defaultValue = "-1",allowableValues = {"-1","0","1","2","3","4"}))
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
