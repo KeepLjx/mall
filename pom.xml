@@ -89,61 +89,61 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--mallé€šç”¨æ¨¡å—-->
+            <!--mallÍ¨ÓÃÄ£¿é-->
             <dependency>
                 <groupId>com.macro.mall</groupId>
                 <artifactId>mall-common</artifactId>
                 <version>${mall-common.version}</version>
             </dependency>
-            <!--mallä¸­MBGç”Ÿæˆæ¨¡å—-->
+            <!--mallÖÐMBGÉú³ÉÄ£¿é-->
             <dependency>
                 <groupId>com.macro.mall</groupId>
                 <artifactId>mall-mbg</artifactId>
                 <version>${mall-mbg.version}</version>
             </dependency>
-            <!--mallå®‰å…¨æ¨¡å—-->
+            <!--mall°²È«Ä£¿é-->
             <dependency>
                 <groupId>com.macro.mall</groupId>
                 <artifactId>mall-security</artifactId>
                 <version>${mall-security.version}</version>
             </dependency>
-            <!--MyBatisåˆ†é¡µæ’ä»¶starter-->
+            <!--MyBatis·ÖÒ³²å¼þstarter-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper-starter.version}</version>
             </dependency>
-            <!--MyBatisçš„Starterä¾èµ–-->
+            <!--MyBatisµÄStarterÒÀÀµ-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot-starter.version}</version>
             </dependency>
-            <!--MyBatisåˆ†é¡µæ’ä»¶-->
+            <!--MyBatis·ÖÒ³²å¼þ-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
-            <!--é›†æˆdruidè¿žæŽ¥æ± -->
+            <!--¼¯³ÉdruidÁ¬½Ó³Ø-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-3-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
-            <!--Hutool Javaå·¥å…·åŒ…-->
+            <!--Hutool Java¹¤¾ß°ü-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-            <!--SpringDocç›¸å…³ä¾èµ–-->
+            <!--SpringDocÏà¹ØÒÀÀµ-->
             <dependency>
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
                 <version>${springdoc-openapi.version}</version>
             </dependency>
-            <!-- MyBatis ç”Ÿæˆå™¨ -->
+            <!-- MyBatis Éú³ÉÆ÷ -->
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
@@ -155,26 +155,26 @@
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
             </dependency>
-            <!--Mysqlæ•°æ®åº“é©±åŠ¨-->
+            <!--MysqlÊý¾Ý¿âÇý¶¯-->
             <dependency>
                 <groupId>com.mysql</groupId>
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-connector.version}</version>
             </dependency>
-            <!--SpringDataå·¥å…·åŒ…-->
+            <!--SpringData¹¤¾ß°ü-->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-commons</artifactId>
                 <version>${spring-data-commons.version}</version>
             </dependency>
 
-            <!-- é˜¿é‡Œäº‘OSS -->
+            <!-- °¢ÀïÔÆOSS -->
             <dependency>
                 <groupId>com.aliyun.oss</groupId>
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${aliyun-oss.version}</version>
             </dependency>
-            <!--é›†æˆlogstash-->
+            <!--¼¯³Élogstash-->
             <dependency>
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
@@ -192,7 +192,7 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
-            <!--Bouncy CastleåŠ å¯†åº“-->
+            <!--Bouncy Castle¼ÓÃÜ¿â-->
             <dependency>
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcprov-jdk18on</artifactId>
@@ -220,7 +220,7 @@
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker.maven.plugin.version}</version>
                         <executions>
-                            <!--å¦‚æžœæƒ³åœ¨é¡¹ç›®æ‰“åŒ…æ—¶æž„å»ºé•œåƒæ·»åŠ -->
+                            <!--Èç¹ûÏëÔÚÏîÄ¿´ò°üÊ±¹¹½¨¾µÏñÌí¼Ó-->
                             <execution>
                                 <id>build-image</id>
                                 <phase>package</phase>
@@ -230,29 +230,29 @@
                             </execution>
                         </executions>
                     <configuration>
-                        <!-- Docker è¿œç¨‹ç®¡ç†åœ°å€-->
+                        <!-- Docker Ô¶³Ì¹ÜÀíµØÖ·-->
                         <dockerHost>${docker.host}</dockerHost>
                         <images>
                             <image>
-                                <!--å®šä¹‰é•œåƒåç§°-->
+                                <!--¶¨Òå¾µÏñÃû³Æ-->
                                 <name>mall/${project.name}:${project.version}</name>
-                                <!--å®šä¹‰é•œåƒæž„å»ºè¡Œä¸º-->
+                                <!--¶¨Òå¾µÏñ¹¹½¨ÐÐÎª-->
                                 <build>
-                                    <!--å®šä¹‰åŸºç¡€é•œåƒ-->
+                                    <!--¶¨Òå»ù´¡¾µÏñ-->
                                     <from>openjdk:17</from>
                                     <args>
                                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                                     </args>
-                                    <!--å®šä¹‰å“ªäº›æ–‡ä»¶æ‹·è´åˆ°å®¹å™¨ä¸­-->
+                                    <!--¶¨ÒåÄÄÐ©ÎÄ¼þ¿½±´µ½ÈÝÆ÷ÖÐ-->
                                     <assembly>
-                                        <!--å®šä¹‰æ‹·è´åˆ°å®¹å™¨çš„ç›®å½•-->
+                                        <!--¶¨Òå¿½±´µ½ÈÝÆ÷µÄÄ¿Â¼-->
                                         <targetDir>/</targetDir>
-                                        <!--åªæ‹·è´ç”Ÿæˆçš„jaråŒ…-->
+                                        <!--Ö»¿½±´Éú³ÉµÄjar°ü-->
                                         <descriptorRef>artifact</descriptorRef>
                                     </assembly>
-                                    <!--å®šä¹‰å®¹å™¨å¯åŠ¨å‘½ä»¤-->
+                                    <!--¶¨ÒåÈÝÆ÷Æô¶¯ÃüÁî-->
                                     <entryPoint>["java", "-jar","-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]</entryPoint>
-                                    <!--å®šä¹‰ç»´æŠ¤è€…-->
+                                    <!--¶¨ÒåÎ¬»¤Õß-->
                                     <maintainer>macrozheng</maintainer>
                                 </build>
                             </image>
@@ -263,11 +263,12 @@
             </plugins>
         </pluginManagement>
         <plugins>
-            <!--è§£å†³SpringBoot 3.2 Parameter Name Retention é—®é¢˜-->
+            <!--½â¾öSpringBoot 3.2 Parameter Name Retention ÎÊÌâ-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>
@@ -276,7 +277,7 @@
         </plugins>
     </build>
 
-    <!--ä½¿ç”¨aliyunçš„é•œåƒæºæå‡ä¾èµ–ä¸‹è½½é€Ÿåº¦-->
+    <!--Ê¹ÓÃaliyunµÄ¾µÏñÔ´ÌáÉýÒÀÀµÏÂÔØËÙ¶È-->
     <repositories>
         <repository>
             <id>aliyunmaven</id>
@@ -290,7 +291,7 @@
         </repository>
     </repositories>
 
-    <!--ä½¿ç”¨aliyunçš„é•œåƒæºæå‡æ’ä»¶ä¸‹è½½é€Ÿåº¦-->
+    <!--Ê¹ÓÃaliyunµÄ¾µÏñÔ´ÌáÉý²å¼þÏÂÔØËÙ¶È-->
     <pluginRepositories>
         <pluginRepository>
             <id>aliyunmaven</id>
