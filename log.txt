@@ -1,0 +1,462 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.macro.mall:mall-admin >----------------------
+[INFO] Building mall-admin 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.10:prepare-agent (prepare-agent) @ mall-admin ---
+[INFO] argLine set to -javaagent:D:\\dep\\maven\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.10\\org.jacoco.agent-0.8.10-runtime.jar=destfile=d:\\workspace\\QTCTest\\projects\\Codebuddy\\mall\\mall-admin\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mall-admin ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 23 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ mall-admin ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 154 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsProductParam.java:[15,1] Generating equals/hashCode implementation but without a call to superclass, even though this class does not extend java.lang.Object. If this is intentional, add '@EqualsAndHashCode(callSuper=false)' to your type.
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,4] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,5] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,6] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,7] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,8] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,9] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xDC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,10] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,11] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xED)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,50] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,51] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,52] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,53] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,54] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,55] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xDC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,56] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,57] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xED)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xE9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBB)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB3)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFD)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,37] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBB)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xEA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,38] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,39] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,40] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,41] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,42] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,43] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,45] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,46] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,47] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,48] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,50] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,51] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,53] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,54] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,55] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,56] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,57] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,58] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,59] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,60] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC4)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC8)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCB)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD3)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC3)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,37] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,38] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB8)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsPrefrenceAreaServiceImpl.java:[3,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?CmsPrefrenceAreaMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsPrefrenceAreaServiceImpl.java:[19,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?CmsPrefrenceAreaMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.CmsPrefrenceAreaServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsSubjectServiceImpl.java:[5,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?CmsSubjectMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsSubjectServiceImpl.java:[21,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?CmsSubjectMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.CmsSubjectServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsCompanyAddressServiceImpl.java:[3,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsCompanyAddressMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsCompanyAddressServiceImpl.java:[19,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsCompanyAddressMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.OmsCompanyAddressServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderReturnApplyMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java:[27,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderReturnApplyMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderReturnApplyServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java:[4,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderReturnReasonMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java:[21,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderReturnReasonMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderReturnReasonServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[9,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderOperateHistoryMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[34,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderOperateHistoryMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderSettingServiceImpl.java:[3,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderSettingMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderSettingServiceImpl.java:[16,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?OmsOrderSettingMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderSettingServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[6,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsBrandMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[7,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[26,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsBrandMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsBrandServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsBrandServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeCategoryServiceImpl.java:[6,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeCategoryServiceImpl.java:[22,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductAttributeCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[7,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductAttributeMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[26,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductAttributeMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductAttributeServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductAttributeServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductCategoryAttributeRelationMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[9,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductCategoryMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[10,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductCategoryMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[30,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[34,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductCategoryAttributeRelationMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[34,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[38,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsMemberPriceMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[42,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductLadderMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[46,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductFullReductionMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[50,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsSkuStockMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[54,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsProductAttributeValueMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[58,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?CmsSubjectProductRelationMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[62,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?CmsPrefrenceAreaProductRelationMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsSkuStockServiceImpl.java:[5,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsSkuStockMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsSkuStockServiceImpl.java:[22,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?PmsSkuStockMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.PmsSkuStockServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsCouponHistoryServiceImpl.java:[5,29] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?SmsCouponHistoryMapper
+  浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsCouponHistoryServiceImpl.java:[21,13] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?SmsCouponHistoryMapper
+  浣嶇疆: 绫?com.macro.mall.service.impl.SmsCouponHistoryServiceImpl
+[INFO] 144 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.109 s
+[INFO] Finished at: 2026-07-29T20:06:19+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project mall-admin: Compilation failure: Compilation failure: 
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,4] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,5] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,6] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,7] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,8] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,9] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xDC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,10] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[18,11] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xED)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,50] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,51] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,52] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,53] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,54] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,55] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xDC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,56] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[22,57] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xED)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xE9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[28,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBB)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[38,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[49,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB3)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xFD)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[60,37] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBB)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCF)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xEA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,38] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,39] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,40] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,41] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,42] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,43] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,45] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,46] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,47] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,48] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,50] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,51] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,53] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,54] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,55] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB2)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,56] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,57] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,58] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,59] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xBC)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[71,60] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,29] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC4)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCA)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xF5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC8)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xCB)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[79,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,33] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB7)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,34] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,35] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD3)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,36] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC3)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,37] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xD0)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[90,38] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xC5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,27] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB1)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,28] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB8)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,30] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB6)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,31] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xA9)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java:[101,32] 缂栫爜 UTF-8 鐨勪笉鍙槧灏勫瓧绗?(0xB5)
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsPrefrenceAreaServiceImpl.java:[3,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?CmsPrefrenceAreaMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsPrefrenceAreaServiceImpl.java:[19,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?CmsPrefrenceAreaMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.CmsPrefrenceAreaServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsSubjectServiceImpl.java:[5,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?CmsSubjectMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/CmsSubjectServiceImpl.java:[21,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?CmsSubjectMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.CmsSubjectServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsCompanyAddressServiceImpl.java:[3,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsCompanyAddressMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsCompanyAddressServiceImpl.java:[19,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsCompanyAddressMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.OmsCompanyAddressServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderReturnApplyMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java:[27,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderReturnApplyMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderReturnApplyServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java:[4,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderReturnReasonMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java:[21,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderReturnReasonMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderReturnReasonServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[9,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderOperateHistoryMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java:[34,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderOperateHistoryMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderSettingServiceImpl.java:[3,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderSettingMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderSettingServiceImpl.java:[16,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?OmsOrderSettingMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.OmsOrderSettingServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[6,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsBrandMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[7,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[26,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsBrandMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsBrandServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsBrandServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeCategoryServiceImpl.java:[6,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeCategoryServiceImpl.java:[22,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductAttributeCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[7,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductAttributeMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[26,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductAttributeMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductAttributeServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductAttributeCategoryMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductAttributeServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[8,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductCategoryAttributeRelationMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[9,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductCategoryMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[10,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[28,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductCategoryMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[30,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java:[34,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductCategoryAttributeRelationMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductCategoryServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[34,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[38,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsMemberPriceMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[42,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductLadderMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[46,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductFullReductionMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[50,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsSkuStockMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[54,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsProductAttributeValueMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[58,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?CmsSubjectProductRelationMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java:[62,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?CmsPrefrenceAreaProductRelationMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsProductServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsSkuStockServiceImpl.java:[5,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsSkuStockMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsSkuStockServiceImpl.java:[22,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?PmsSkuStockMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.PmsSkuStockServiceImpl
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsCouponHistoryServiceImpl.java:[5,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?SmsCouponHistoryMapper
+[ERROR]   浣嶇疆: 绋嬪簭鍖?com.macro.mall.mapper
+[ERROR] /d:/workspace/QTCTest/projects/Codebuddy/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsCouponHistoryServiceImpl.java:[21,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?SmsCouponHistoryMapper
+[ERROR]   浣嶇疆: 绫?com.macro.mall.service.impl.SmsCouponHistoryServiceImpl
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

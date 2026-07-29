@@ -1,0 +1,57 @@
+# 自动检测文本文件，统一换行符为 LF
+* text=auto
+
+# Java 源码文件
+*.java text eol=lf diff=java
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.properties text eol=lf
+*.gradle text eol=lf
+
+# 文档文件
+*.md text eol=lf
+*.txt text eol=lf
+*.adoc text eol=lf
+
+# Web 前端文件
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.vue text eol=lf
+*.json text eol=lf
+
+# Shell 脚本
+*.sh text eol=lf
+
+# 配置文件
+*.cfg text eol=lf
+*.conf text eol=lf
+*.ini text eol=lf
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# 二进制文件
+*.jar binary
+*.war binary
+*.class binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.db binary
+*.sqlite binary
