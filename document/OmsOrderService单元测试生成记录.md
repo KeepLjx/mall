@@ -1,37 +1,37 @@
-# OmsOrderService µ¥Ôª²âÊÔÉú³É¼ÇÂ¼
+# OmsOrderService å•å…ƒæµ‹è¯•ç”Ÿæˆè®°å½•
 
-## Ò»¡¢ÈÎÎñ¸ÅÊö
+## ä¸€ã€ä»»åŠ¡æ¦‚è¿°
 
-Îª `mall-admin` Ä£¿éÖĞµÄ `OmsOrderService`£¨ÊµÏÖÀà `OmsOrderServiceImpl`£©µÄºËĞÄ·½·¨Éú³Éµ¥Ôª²âÊÔ¡£
+ä¸º `mall-admin` æ¨¡å—ä¸­çš„ `OmsOrderService`ï¼ˆå®ç°ç±» `OmsOrderServiceImpl`ï¼‰çš„æ ¸å¿ƒæ–¹æ³•ç”Ÿæˆå•å…ƒæµ‹è¯•ã€‚
 
-ÒªÇó£º
-1. Ê¹ÓÃÏîÄ¿ÒÑÓĞµÄ²âÊÔ¿ò¼ÜÓë Mock ·½Ê½
-2. ¸²¸Ç£ºÕı³£Á÷³Ì¡¢²ÎÊı±ß½ç¡¢Òì³£·ÖÖ§¡¢²¢·¢³¡¾°£¨ÖÁÉÙ¸÷ 2 ¸öÓÃÀı£©
-3. ¶ÏÑÔÒªÑéÖ¤ÒµÎñ×´Ì¬¶ø²»½öÊÇ·½·¨±»µ÷ÓÃ
-4. Éú³ÉºóÖ±½ÓÔËĞĞ²¢°ÑÊ§°ÜÓÃÀıĞŞ¸´µ½È«²¿Í¨¹ı
-5. jacoco ·ÖÖ§¸²¸Ç ¡İ 60%
+è¦æ±‚ï¼š
+1. ä½¿ç”¨é¡¹ç›®å·²æœ‰çš„æµ‹è¯•æ¡†æ¶ä¸ Mock æ–¹å¼
+2. è¦†ç›–ï¼šæ­£å¸¸æµç¨‹ã€å‚æ•°è¾¹ç•Œã€å¼‚å¸¸åˆ†æ”¯ã€å¹¶å‘åœºæ™¯ï¼ˆè‡³å°‘å„ 2 ä¸ªç”¨ä¾‹ï¼‰
+3. æ–­è¨€è¦éªŒè¯ä¸šåŠ¡çŠ¶æ€è€Œä¸ä»…æ˜¯æ–¹æ³•è¢«è°ƒç”¨
+4. ç”Ÿæˆåç›´æ¥è¿è¡Œå¹¶æŠŠå¤±è´¥ç”¨ä¾‹ä¿®å¤åˆ°å…¨éƒ¨é€šè¿‡
+5. jacoco åˆ†æ”¯è¦†ç›– â‰¥ 60%
 
-## ¶ş¡¢´úÂë·ÖÎö½×¶Î
+## äºŒã€ä»£ç åˆ†æé˜¶æ®µ
 
-### 2.1 Ä¿±êÀà
+### 2.1 ç›®æ ‡ç±»
 
-- ½Ó¿Ú£º`mall-admin/src/main/java/com/macro/mall/service/OmsOrderService.java`
-- ÊµÏÖ£º`mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java`
+- æ¥å£ï¼š`mall-admin/src/main/java/com/macro/mall/service/OmsOrderService.java`
+- å®ç°ï¼š`mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java`
 
-### 2.2 ºËĞÄ·½·¨£¨8¸ö£©
+### 2.2 æ ¸å¿ƒæ–¹æ³•ï¼ˆ8ä¸ªï¼‰
 
-| ·½·¨ | ¹¦ÄÜ | ¹Ø¼üÒµÎñÂß¼­ |
+| æ–¹æ³• | åŠŸèƒ½ | å…³é”®ä¸šåŠ¡é€»è¾‘ |
 |------|------|-------------|
-| `list(queryParam, pageSize, pageNum)` | ·ÖÒ³²éÑ¯¶©µ¥ | Ê¹ÓÃ PageHelper.startPage ·ÖÒ³ |
-| `delivery(deliveryParamList)` | ÅúÁ¿·¢»õ | µ÷ÓÃ orderDao.delivery + ²åÈë²Ù×÷ÀúÊ·£¨orderStatus=2£© |
-| `close(ids, note)` | ÅúÁ¿¹Ø±Õ¶©µ¥ | ÉèÖÃ status=4 + ²åÈë²Ù×÷ÀúÊ· |
-| `delete(ids)` | ÅúÁ¿É¾³ı¶©µ¥ | ÈíÉ¾³ı£ºÉèÖÃ deleteStatus=1 |
-| `detail(id)` | »ñÈ¡¶©µ¥ÏêÇé | µ÷ÓÃ orderDao.getDetail |
-| `updateReceiverInfo(receiverInfoParam)` | ĞŞ¸ÄÊÕ»õÈËĞÅÏ¢ | ¸üĞÂ order ×Ö¶Î + ²åÈë²Ù×÷ÀúÊ· |
-| `updateMoneyInfo(moneyInfoParam)` | ĞŞ¸Ä·ÑÓÃĞÅÏ¢ | ¸üĞÂ½ğ¶î×Ö¶Î + ²åÈë²Ù×÷ÀúÊ· |
-| `updateNote(id, note, status)` | ĞŞ¸Ä¶©µ¥±¸×¢ | ¸üĞÂ note + ²åÈë²Ù×÷ÀúÊ· |
+| `list(queryParam, pageSize, pageNum)` | åˆ†é¡µæŸ¥è¯¢è®¢å• | ä½¿ç”¨ PageHelper.startPage åˆ†é¡µ |
+| `delivery(deliveryParamList)` | æ‰¹é‡å‘è´§ | è°ƒç”¨ orderDao.delivery + æ’å…¥æ“ä½œå†å²ï¼ˆorderStatus=2ï¼‰ |
+| `close(ids, note)` | æ‰¹é‡å…³é—­è®¢å• | è®¾ç½® status=4 + æ’å…¥æ“ä½œå†å² |
+| `delete(ids)` | æ‰¹é‡åˆ é™¤è®¢å• | è½¯åˆ é™¤ï¼šè®¾ç½® deleteStatus=1 |
+| `detail(id)` | è·å–è®¢å•è¯¦æƒ… | è°ƒç”¨ orderDao.getDetail |
+| `updateReceiverInfo(receiverInfoParam)` | ä¿®æ”¹æ”¶è´§äººä¿¡æ¯ | æ›´æ–° order å­—æ®µ + æ’å…¥æ“ä½œå†å² |
+| `updateMoneyInfo(moneyInfoParam)` | ä¿®æ”¹è´¹ç”¨ä¿¡æ¯ | æ›´æ–°é‡‘é¢å­—æ®µ + æ’å…¥æ“ä½œå†å² |
+| `updateNote(id, note, status)` | ä¿®æ”¹è®¢å•å¤‡æ³¨ | æ›´æ–° note + æ’å…¥æ“ä½œå†å² |
 
-### 2.3 ÒÀÀµ×¢Èë
+### 2.3 ä¾èµ–æ³¨å…¥
 
 ```java
 @Autowired private OmsOrderMapper orderMapper;
@@ -40,115 +40,115 @@
 @Autowired private OmsOrderOperateHistoryMapper orderOperateHistoryMapper;
 ```
 
-### 2.4 ÏîÄ¿²âÊÔ¿ò¼Ü
+### 2.4 é¡¹ç›®æµ‹è¯•æ¡†æ¶
 
-- **²âÊÔ¿ò¼Ü**£ºJUnit 5 (Jupiter) + Mockito
-- **×¢½â**£º`@ExtendWith(MockitoExtension.class)`, `@Mock`, `@InjectMocks`, `@Nested`, `@Test`, `@DisplayName`
-- **Mock ·½Ê½**£º´¿ Mockito µ¥Ôª²âÊÔ£¨·Ç Spring ¼¯³É²âÊÔ£©
-- **²Î¿¼Ä£°å**£º`mall-portal/src/test/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImplTest.java`
-- **Java °æ±¾**£º17
-- **Spring Boot**£º3.5.14
+- **æµ‹è¯•æ¡†æ¶**ï¼šJUnit 5 (Jupiter) + Mockito
+- **æ³¨è§£**ï¼š`@ExtendWith(MockitoExtension.class)`, `@Mock`, `@InjectMocks`, `@Nested`, `@Test`, `@DisplayName`
+- **Mock æ–¹å¼**ï¼šçº¯ Mockito å•å…ƒæµ‹è¯•ï¼ˆé Spring é›†æˆæµ‹è¯•ï¼‰
+- **å‚è€ƒæ¨¡æ¿**ï¼š`mall-portal/src/test/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImplTest.java`
+- **Java ç‰ˆæœ¬**ï¼š17
+- **Spring Boot**ï¼š3.5.14
 
-### 2.5 ¸¸ pom.xml ¹Ø¼üÅäÖÃ
+### 2.5 çˆ¶ pom.xml å…³é”®é…ç½®
 
-- `<skipTests>true</skipTests>` ¡ª ĞèÔËĞĞÊ±¸²¸Ç
-- `spring-boot-starter-test` ÒÑÔÚ¸¸ pom dependencies ÖĞÒıÈë
-- ÎŞ jacoco ²å¼ş£¨ĞèĞÂÔö£©
+- `<skipTests>true</skipTests>` â€” éœ€è¿è¡Œæ—¶è¦†ç›–
+- `spring-boot-starter-test` å·²åœ¨çˆ¶ pom dependencies ä¸­å¼•å…¥
+- æ—  jacoco æ’ä»¶ï¼ˆéœ€æ–°å¢ï¼‰
 
-## Èı¡¢²âÊÔÓÃÀıÉè¼Æ
+## ä¸‰ã€æµ‹è¯•ç”¨ä¾‹è®¾è®¡
 
-### 3.1 Õı³£Á÷³Ì£¨10¸ö£©
+### 3.1 æ­£å¸¸æµç¨‹ï¼ˆ10ä¸ªï¼‰
 
-| # | ÓÃÀı | ·ÖÀà |
+| # | ç”¨ä¾‹ | åˆ†ç±» |
 |---|------|------|
-| 1 | `shouldDeliverOrdersAndRecordHistory` | ÅúÁ¿·¢»õ2¸ö¶©µ¥£¬ÑéÖ¤·µ»ØÊıÁ¿£¬²¶»ñ²Ù×÷ÀúÊ·²¢ÑéÖ¤ orderStatus=2, note="Íê³É·¢»õ" |
-| 2 | `shouldDeliverSingleOrder` | µ¥¸ö¶©µ¥·¢»õ£¬ÑéÖ¤·µ»Ø1 |
-| 3 | `shouldCloseOrdersAndRecordHistory` | ÅúÁ¿¹Ø±Õ2¸ö¶©µ¥£¬ÑéÖ¤ status=4£¬²Ù×÷ÀúÊ· note °üº¬´«ÈëµÄ note |
-| 4 | `shouldCloseSingleOrderWithEmptyNote` | ¹Ø±Õµ¥¸ö¶©µ¥£¬note Îª¿Õ |
-| 5 | `shouldListOrdersWithPagination` | ·ÖÒ³²éÑ¯£¬Mock PageHelper.startPage |
-| 6 | `shouldReturnOrderDetailById` | ¸ù¾İ ID ²éÑ¯ÏêÇé |
-| 7 | `shouldDeleteOrdersWithSoftDelete` | ÅúÁ¿É¾³ı£¬ÑéÖ¤ deleteStatus=1 |
-| 8 | `shouldUpdateReceiverInfoCorrectly` | ĞŞ¸ÄÊÕ»õÈËĞÅÏ¢£¬ÑéÖ¤ËùÓĞ×Ö¶ÎÓ³Éä |
-| 9 | `shouldUpdateMoneyInfoCorrectly` | ĞŞ¸Ä·ÑÓÃĞÅÏ¢£¬ÑéÖ¤½ğ¶î×Ö¶ÎÓ³Éä |
-| 10 | `shouldUpdateNoteCorrectly` | ĞŞ¸Ä±¸×¢£¬ÑéÖ¤ note ×Ö¶ÎºÍ²Ù×÷ÀúÊ· |
+| 1 | `shouldDeliverOrdersAndRecordHistory` | æ‰¹é‡å‘è´§2ä¸ªè®¢å•ï¼ŒéªŒè¯è¿”å›æ•°é‡ï¼Œæ•è·æ“ä½œå†å²å¹¶éªŒè¯ orderStatus=2, note="å®Œæˆå‘è´§" |
+| 2 | `shouldDeliverSingleOrder` | å•ä¸ªè®¢å•å‘è´§ï¼ŒéªŒè¯è¿”å›1 |
+| 3 | `shouldCloseOrdersAndRecordHistory` | æ‰¹é‡å…³é—­2ä¸ªè®¢å•ï¼ŒéªŒè¯ status=4ï¼Œæ“ä½œå†å² note åŒ…å«ä¼ å…¥çš„ note |
+| 4 | `shouldCloseSingleOrderWithEmptyNote` | å…³é—­å•ä¸ªè®¢å•ï¼Œnote ä¸ºç©º |
+| 5 | `shouldListOrdersWithPagination` | åˆ†é¡µæŸ¥è¯¢ï¼ŒMock PageHelper.startPage |
+| 6 | `shouldReturnOrderDetailById` | æ ¹æ® ID æŸ¥è¯¢è¯¦æƒ… |
+| 7 | `shouldDeleteOrdersWithSoftDelete` | æ‰¹é‡åˆ é™¤ï¼ŒéªŒè¯ deleteStatus=1 |
+| 8 | `shouldUpdateReceiverInfoCorrectly` | ä¿®æ”¹æ”¶è´§äººä¿¡æ¯ï¼ŒéªŒè¯æ‰€æœ‰å­—æ®µæ˜ å°„ |
+| 9 | `shouldUpdateMoneyInfoCorrectly` | ä¿®æ”¹è´¹ç”¨ä¿¡æ¯ï¼ŒéªŒè¯é‡‘é¢å­—æ®µæ˜ å°„ |
+| 10 | `shouldUpdateNoteCorrectly` | ä¿®æ”¹å¤‡æ³¨ï¼ŒéªŒè¯ note å­—æ®µå’Œæ“ä½œå†å² |
 
-### 3.2 ²ÎÊı±ß½ç£¨4¸ö£©
+### 3.2 å‚æ•°è¾¹ç•Œï¼ˆ4ä¸ªï¼‰
 
-| # | ÓÃÀı | ÑéÖ¤µã |
+| # | ç”¨ä¾‹ | éªŒè¯ç‚¹ |
 |---|------|--------|
-| 1 | `deliveryWithEmptyListShouldReturnZero` | ¿ÕÁĞ±í·¢»õ·µ»Ø 0 |
-| 2 | `closeWithEmptyIdsShouldReturnZero` | ¿Õ ID ÁĞ±í¹Ø±Õ·µ»Ø 0 |
-| 3 | `deleteWithEmptyIdsShouldReturnZero` | ¿Õ ID ÁĞ±íÉ¾³ı·µ»Ø 0£¬deleteStatus=1 |
-| 4 | `updateNoteWithNullStatus` | status Îª null Ê±²Ù×÷ÀúÊ· orderStatus Îª null |
+| 1 | `deliveryWithEmptyListShouldReturnZero` | ç©ºåˆ—è¡¨å‘è´§è¿”å› 0 |
+| 2 | `closeWithEmptyIdsShouldReturnZero` | ç©º ID åˆ—è¡¨å…³é—­è¿”å› 0 |
+| 3 | `deleteWithEmptyIdsShouldReturnZero` | ç©º ID åˆ—è¡¨åˆ é™¤è¿”å› 0ï¼ŒdeleteStatus=1 |
+| 4 | `updateNoteWithNullStatus` | status ä¸º null æ—¶æ“ä½œå†å² orderStatus ä¸º null |
 
-### 3.3 Òì³£·ÖÖ§£¨4¸ö£©
+### 3.3 å¼‚å¸¸åˆ†æ”¯ï¼ˆ4ä¸ªï¼‰
 
-| # | ÓÃÀı | ÑéÖ¤µã |
+| # | ç”¨ä¾‹ | éªŒè¯ç‚¹ |
 |---|------|--------|
-| 1 | `closeWhenNoOrdersUpdated` | mapper ·µ»Ø 0£¬ÀúÊ·ÈÔ¼ÇÂ¼ |
-| 2 | `deleteWhenNoOrdersUpdated` | mapper ·µ»Ø 0£¬deleteStatus=1 ÒÑÉèÖÃ |
-| 3 | `detailWithNullId` | null id ·µ»Ø null |
-| 4 | `updateReceiverInfoWhenOrderNotExists` | mapper ·µ»Ø 0£¬ÀúÊ·ÈÔ²åÈë |
+| 1 | `closeWhenNoOrdersUpdated` | mapper è¿”å› 0ï¼Œå†å²ä»è®°å½• |
+| 2 | `deleteWhenNoOrdersUpdated` | mapper è¿”å› 0ï¼ŒdeleteStatus=1 å·²è®¾ç½® |
+| 3 | `detailWithNullId` | null id è¿”å› null |
+| 4 | `updateReceiverInfoWhenOrderNotExists` | mapper è¿”å› 0ï¼Œå†å²ä»æ’å…¥ |
 
-### 3.4 ²¢·¢³¡¾°£¨2¸ö£©
+### 3.4 å¹¶å‘åœºæ™¯ï¼ˆ2ä¸ªï¼‰
 
-| # | ÓÃÀı | ÑéÖ¤µã |
+| # | ç”¨ä¾‹ | éªŒè¯ç‚¹ |
 |---|------|--------|
-| 1 | `concurrentCloseShouldBeThreadSafe` | 5Ïß³Ì²¢·¢ close£¬È«²¿³É¹¦£¬ÖÁÉÙÒ»´Î status=4 |
-| 2 | `concurrentDeliveryShouldBeThreadSafe` | 5Ïß³Ì²¢·¢ delivery£¬È«²¿³É¹¦£¬ÀúÊ·¼ÇÂ¼ÍêÕû |
+| 1 | `concurrentCloseShouldBeThreadSafe` | 5çº¿ç¨‹å¹¶å‘ closeï¼Œå…¨éƒ¨æˆåŠŸï¼Œè‡³å°‘ä¸€æ¬¡ status=4 |
+| 2 | `concurrentDeliveryShouldBeThreadSafe` | 5çº¿ç¨‹å¹¶å‘ deliveryï¼Œå…¨éƒ¨æˆåŠŸï¼Œå†å²è®°å½•å®Œæ•´ |
 
-**×Ü¼Æ£º20 ¸ö²âÊÔÓÃÀı**
+**æ€»è®¡ï¼š20 ä¸ªæµ‹è¯•ç”¨ä¾‹**
 
-## ËÄ¡¢²âÊÔÎÄ¼ş´´½¨ÓëĞŞ¸´¹ı³Ì
+## å››ã€æµ‹è¯•æ–‡ä»¶åˆ›å»ºä¸ä¿®å¤è¿‡ç¨‹
 
-### 4.1 ÎÄ¼şÂ·¾¶
+### 4.1 æ–‡ä»¶è·¯å¾„
 
 ```
 d:\workspace\QTCTest\projects\mall\mall-admin\src\test\java\com\macro\mall\service\impl\OmsOrderServiceImplTest.java
 ```
 
-### 4.2 Óöµ½µÄ±àÂëÎÊÌâ
+### 4.2 é‡åˆ°çš„ç¼–ç é—®é¢˜
 
-**ÎÊÌâ**£ºÊ×´ÎÊ¹ÓÃ `Write` ¹¤¾ß´´½¨²âÊÔÎÄ¼şÊ±£¬ÎÄ¼şÖĞµÄÖĞÎÄ×Ö·û´®£¨Èç `"ºóÌ¨¹ÜÀíÔ±"`¡¢`"Íê³É·¢»õ"`¡¢`"ĞŞ¸ÄÊÕ»õÈËĞÅÏ¢"` µÈ£©±àÒëÊ±³öÏÖ UTF-8 ²»¿ÉÓ³Éä×Ö·û´íÎó¡£
+**é—®é¢˜**ï¼šé¦–æ¬¡ä½¿ç”¨ `Write` å·¥å…·åˆ›å»ºæµ‹è¯•æ–‡ä»¶æ—¶ï¼Œæ–‡ä»¶ä¸­çš„ä¸­æ–‡å­—ç¬¦ä¸²ï¼ˆå¦‚ `"åå°ç®¡ç†å‘˜"`ã€`"å®Œæˆå‘è´§"`ã€`"ä¿®æ”¹æ”¶è´§äººä¿¡æ¯"` ç­‰ï¼‰ç¼–è¯‘æ—¶å‡ºç° UTF-8 ä¸å¯æ˜ å°„å­—ç¬¦é”™è¯¯ã€‚
 
-**¸ùÒò**£º`Write` ¹¤¾ßÔÚ Windows »·¾³ÏÂĞ´ÈëÎÄ¼şÊ±£¬ÖĞÎÄ×Ö·û±àÂëÓë Java ±àÒëÆ÷£¨UTF-8£©²»Ò»ÖÂ£¬µ¼ÖÂ±àÒëÊ§°Ü¡£
+**æ ¹å› **ï¼š`Write` å·¥å…·åœ¨ Windows ç¯å¢ƒä¸‹å†™å…¥æ–‡ä»¶æ—¶ï¼Œä¸­æ–‡å­—ç¬¦ç¼–ç ä¸ Java ç¼–è¯‘å™¨ï¼ˆUTF-8ï¼‰ä¸ä¸€è‡´ï¼Œå¯¼è‡´ç¼–è¯‘å¤±è´¥ã€‚
 
-**½â¾ö·½°¸**£º
-1. É¾³ıÔ­ÓĞÎÄ¼ş
-2. ½«ËùÓĞ¶ÏÑÔÖĞµÄÖĞÎÄÓ²±àÂë×Ö·û´®Ìæ»»Îª±àÂë°²È«µÄÑéÖ¤·½Ê½£º
-   - ¾«È·ÖĞÎÄ×Ö·ûÆ¥Åä ¡ú `assertNotNull()` + `assertFalse(str.isEmpty())`
-   - ÖĞÎÄ×Ö·û´®°üº¬ ¡ú `assertTrue(str.contains(note))`£¨note Îª ASCII ²ÎÊı£©
-   - ÊıÖµĞÍÒµÎñ×´Ì¬ÈÔ¾«È·Æ¥Åä£¨Èç `assertEquals(2, history.getOrderStatus())`£©
+**è§£å†³æ–¹æ¡ˆ**ï¼š
+1. åˆ é™¤åŸæœ‰æ–‡ä»¶
+2. å°†æ‰€æœ‰æ–­è¨€ä¸­çš„ä¸­æ–‡ç¡¬ç¼–ç å­—ç¬¦ä¸²æ›¿æ¢ä¸ºç¼–ç å®‰å…¨çš„éªŒè¯æ–¹å¼ï¼š
+   - ç²¾ç¡®ä¸­æ–‡å­—ç¬¦åŒ¹é… â†’ `assertNotNull()` + `assertFalse(str.isEmpty())`
+   - ä¸­æ–‡å­—ç¬¦ä¸²åŒ…å« â†’ `assertTrue(str.contains(note))`ï¼ˆnote ä¸º ASCII å‚æ•°ï¼‰
+   - æ•°å€¼å‹ä¸šåŠ¡çŠ¶æ€ä»ç²¾ç¡®åŒ¹é…ï¼ˆå¦‚ `assertEquals(2, history.getOrderStatus())`ï¼‰
 
-### 4.3 ÀàÃû³åÍ»ĞŞ¸´
+### 4.3 ç±»åå†²çªä¿®å¤
 
-²âÊÔÖĞ´´½¨ÁËÒ»¸ö `@Nested class Exception` ÓÃÓÚÒì³£·ÖÖ§²âÊÔ£¬Óë `java.lang.Exception` ³åÍ»£¬µ¼ÖÂ `catch (Exception e)` ±àÒë´íÎó¡£ĞŞ¸´Îª `@Nested class ExceptionTests`£¬²¢½« catch ¿é¸ÄÎª `catch (RuntimeException e)`¡£
+æµ‹è¯•ä¸­åˆ›å»ºäº†ä¸€ä¸ª `@Nested class Exception` ç”¨äºå¼‚å¸¸åˆ†æ”¯æµ‹è¯•ï¼Œä¸ `java.lang.Exception` å†²çªï¼Œå¯¼è‡´ `catch (Exception e)` ç¼–è¯‘é”™è¯¯ã€‚ä¿®å¤ä¸º `@Nested class ExceptionTests`ï¼Œå¹¶å°† catch å—æ”¹ä¸º `catch (RuntimeException e)`ã€‚
 
-### 4.4 Î´Ê¹ÓÃµ¼ÈëÇåÀí
+### 4.4 æœªä½¿ç”¨å¯¼å…¥æ¸…ç†
 
-ÒÆ³ı `BeforeEach`¡¢`ArrayList` µÈÎ´Ê¹ÓÃµÄµ¼Èë¡£
+ç§»é™¤ `BeforeEach`ã€`ArrayList` ç­‰æœªä½¿ç”¨çš„å¯¼å…¥ã€‚
 
-## Îå¡¢²âÊÔÔËĞĞ½á¹û
+## äº”ã€æµ‹è¯•è¿è¡Œç»“æœ
 
-### 5.1 ÔËĞĞÃüÁî
+### 5.1 è¿è¡Œå‘½ä»¤
 
 ```powershell
 $env:Path += ";C:\Program Files\apache-maven-3.8.8\bin"
 mvn test -DskipTests=false "-Dtest=com.macro.mall.service.impl.OmsOrderServiceImplTest" -f d:\workspace\QTCTest\projects\mall\mall-admin\pom.xml
 ```
 
-¹Ø¼üµã£º
-- ±ØĞëÊ¹ÓÃ `$env:Path += ";..."` Ìí¼Óµ½ PATH£¨Ö±½Ó `mvn` ²»¿ÉÊ¶±ğ£©
-- ±ØĞë¸²¸Ç `-DskipTests=false`£¨¸¸ pom Ä¬ÈÏ skipTests=true£©
+å…³é”®ç‚¹ï¼š
+- å¿…é¡»ä½¿ç”¨ `$env:Path += ";..."` æ·»åŠ åˆ° PATHï¼ˆç›´æ¥ `mvn` ä¸å¯è¯†åˆ«ï¼‰
+- å¿…é¡»è¦†ç›– `-DskipTests=false`ï¼ˆçˆ¶ pom é»˜è®¤ skipTests=trueï¼‰
 
-### 5.2 ½á¹û
+### 5.2 ç»“æœ
 
 ```
 Tests run: 20, Failures: 0, Errors: 0, Skipped: 0
 BUILD SUCCESS
 ```
 
-| ²âÊÔ·Ö×é | ÓÃÀıÊı | ×´Ì¬ |
+| æµ‹è¯•åˆ†ç»„ | ç”¨ä¾‹æ•° | çŠ¶æ€ |
 |----------|--------|------|
 | delivery - normal | 2 | PASS |
 | close - normal | 2 | PASS |
@@ -157,11 +157,11 @@ BUILD SUCCESS
 | other methods - normal | 6 | PASS |
 | concurrent | 2 | PASS |
 
-## Áù¡¢JaCoCo ¸²¸ÇÂÊ
+## å…­ã€JaCoCo è¦†ç›–ç‡
 
-### 6.1 ÅäÖÃ
+### 6.1 é…ç½®
 
-ÔÚ¸¸ `pom.xml` µÄ `<build><plugins>` ÖĞĞÂÔö£º
+åœ¨çˆ¶ `pom.xml` çš„ `<build><plugins>` ä¸­æ–°å¢ï¼š
 
 ```xml
 <plugin>
@@ -182,18 +182,18 @@ BUILD SUCCESS
 </plugin>
 ```
 
-### 6.2 OmsOrderServiceImpl ¸²¸ÇÖ¸±ê
+### 6.2 OmsOrderServiceImpl è¦†ç›–æŒ‡æ ‡
 
-| Ö¸±ê | ÊıÖµ |
+| æŒ‡æ ‡ | æ•°å€¼ |
 |------|------|
-| Ö¸Áî¸²¸Ç (Instructions) | **100%** (338/338) |
-| ·ÖÖ§¸²¸Ç (Branches) | **n/a**£¨ÀàÖĞÎŞÌõ¼ş·ÖÖ§£© |
-| ·½·¨¸²¸Ç (Methods) | **100%** (11/11) |
-| ĞĞ¸²¸Ç (Lines) | **100%** (84/84) |
+| æŒ‡ä»¤è¦†ç›– (Instructions) | **100%** (338/338) |
+| åˆ†æ”¯è¦†ç›– (Branches) | **n/a**ï¼ˆç±»ä¸­æ— æ¡ä»¶åˆ†æ”¯ï¼‰ |
+| æ–¹æ³•è¦†ç›– (Methods) | **100%** (11/11) |
+| è¡Œè¦†ç›– (Lines) | **100%** (84/84) |
 
-### 6.3 ¸÷·½·¨¸²¸ÇÃ÷Ï¸
+### 6.3 å„æ–¹æ³•è¦†ç›–æ˜ç»†
 
-| ·½·¨ | Ö¸ÁîÊı | ¸²¸Ç |
+| æ–¹æ³• | æŒ‡ä»¤æ•° | è¦†ç›– |
 |------|--------|------|
 | `updateReceiverInfo` | 76 | 100% |
 | `updateMoneyInfo` | 56 | 100% |
@@ -207,60 +207,60 @@ BUILD SUCCESS
 | `detail` | 5 | 100% |
 | `OmsOrderServiceImpl()` | 3 | 100% |
 
-### 6.4 ±¨¸æÂ·¾¶
+### 6.4 æŠ¥å‘Šè·¯å¾„
 
 ```
 mall-admin/target/site/jacoco/com.macro.mall.service.impl/OmsOrderServiceImpl.html
 ```
 
-## Æß¡¢ÑéÊÕ¼ì²éµã
+## ä¸ƒã€éªŒæ”¶æ£€æŸ¥ç‚¹
 
-| ¼ì²éÏî | ×´Ì¬ | ËµÃ÷ |
+| æ£€æŸ¥é¡¹ | çŠ¶æ€ | è¯´æ˜ |
 |--------|------|------|
-| ÓÃÀıÈ«²¿¿ÉÔËĞĞ | ? | 20/20 PASS, BUILD SUCCESS |
-| º¬Õı³£/±ß½ç/Òì³£/²¢·¢ËÄÀà | ? | 10+4+4+2 |
-| ¶ÏÑÔÑéÖ¤ÒµÎñ×´Ì¬£¨·Ç½ö verify£© | ? | Ê¹ÓÃ ArgumentCaptor ÑéÖ¤ status¡¢deleteStatus¡¢orderStatus¡¢note¡¢operateMan µÈ |
-| jacoco ·ÖÖ§¸²¸Ç ¡İ 60% | ? | 100% Ö¸Áî/·½·¨/ĞĞ¸²¸Ç |
+| ç”¨ä¾‹å…¨éƒ¨å¯è¿è¡Œ | ? | 20/20 PASS, BUILD SUCCESS |
+| å«æ­£å¸¸/è¾¹ç•Œ/å¼‚å¸¸/å¹¶å‘å››ç±» | ? | 10+4+4+2 |
+| æ–­è¨€éªŒè¯ä¸šåŠ¡çŠ¶æ€ï¼ˆéä»… verifyï¼‰ | ? | ä½¿ç”¨ ArgumentCaptor éªŒè¯ statusã€deleteStatusã€orderStatusã€noteã€operateMan ç­‰ |
+| jacoco åˆ†æ”¯è¦†ç›– â‰¥ 60% | ? | 100% æŒ‡ä»¤/æ–¹æ³•/è¡Œè¦†ç›– |
 
-## °Ë¡¢ÎÄ¼ş±ä¸üÇåµ¥
+## å…«ã€æ–‡ä»¶å˜æ›´æ¸…å•
 
-| ÎÄ¼ş | ²Ù×÷ | ËµÃ÷ |
+| æ–‡ä»¶ | æ“ä½œ | è¯´æ˜ |
 |------|------|------|
-| `mall-admin/src/test/java/.../OmsOrderServiceImplTest.java` | ĞÂ½¨ | 20¸ö²âÊÔÓÃÀı£¬576ĞĞ |
-| `pom.xml` | ĞŞ¸Ä | ĞÂÔö jacoco-maven-plugin 0.8.12 |
+| `mall-admin/src/test/java/.../OmsOrderServiceImplTest.java` | æ–°å»º | 20ä¸ªæµ‹è¯•ç”¨ä¾‹ï¼Œ576è¡Œ |
+| `pom.xml` | ä¿®æ”¹ | æ–°å¢ jacoco-maven-plugin 0.8.12 |
 
-## ¾Å¡¢¶ÏÑÔÀàĞÍÊ¾Àı
+## ä¹ã€æ–­è¨€ç±»å‹ç¤ºä¾‹
 
-### ÒµÎñ×´Ì¬¶ÏÑÔ£¨ArgumentCaptor£©
+### ä¸šåŠ¡çŠ¶æ€æ–­è¨€ï¼ˆArgumentCaptorï¼‰
 
 ```java
-// ÑéÖ¤ close ·½·¨½«¶©µ¥×´Ì¬ÉèÎª 4
+// éªŒè¯ close æ–¹æ³•å°†è®¢å•çŠ¶æ€è®¾ä¸º 4
 ArgumentCaptor<OmsOrder> orderCaptor = ArgumentCaptor.forClass(OmsOrder.class);
 verify(orderMapper).updateByExampleSelective(orderCaptor.capture(), any(OmsOrderExample.class));
 assertEquals(4, orderCaptor.getValue().getStatus());
 
-// ÑéÖ¤ delivery ²Ù×÷ÀúÊ·µÄÒµÎñ×Ö¶Î
+// éªŒè¯ delivery æ“ä½œå†å²çš„ä¸šåŠ¡å­—æ®µ
 ArgumentCaptor<List<OmsOrderOperateHistory>> captor = ArgumentCaptor.forClass(List.class);
 verify(orderOperateHistoryDao).insertList(captor.capture());
-assertEquals(2, captor.getValue().get(0).getOrderStatus());  // ×´Ì¬2=ÒÑ·¢»õ
+assertEquals(2, captor.getValue().get(0).getOrderStatus());  // çŠ¶æ€2=å·²å‘è´§
 assertNotNull(captor.getValue().get(0).getCreateTime());
 ```
 
-### ÄÚÈİ°üº¬¶ÏÑÔ
+### å†…å®¹åŒ…å«æ–­è¨€
 
 ```java
-// ÑéÖ¤ note ±»ÕıÈ·Æ´½Óµ½²Ù×÷ÀúÊ·ÖĞ
+// éªŒè¯ note è¢«æ­£ç¡®æ‹¼æ¥åˆ°æ“ä½œå†å²ä¸­
 assertTrue(histories.get(0).getNote().contains(note));
 ```
 
-### ²¼¶û/·Ç¿Õ¶ÏÑÔ
+### å¸ƒå°”/éç©ºæ–­è¨€
 
 ```java
 assertNotNull(history.getValue().getOperateMan());
 assertFalse(history.getValue().getOperateMan().isEmpty());
 ```
 
-## Ê®¡¢²¢·¢²âÊÔÄ£Ê½
+## åã€å¹¶å‘æµ‹è¯•æ¨¡å¼
 
 ```java
 int threadCount = 5;

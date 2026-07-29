@@ -10,73 +10,73 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 前台订单管理Service
+ * 鍓嶅彴璁㈠崟绠＄悊Service
  * Created by macro on 2018/8/30.
  */
 public interface OmsPortalOrderService {
     /**
-     * 根据用户购物车信息生成确认单信息
+     * 鏍规嵁鐢ㄦ埛璐墿杞︿俊鎭敓鎴愮‘璁ゅ崟淇℃伅
      */
     ConfirmOrderResult generateConfirmOrder(List<Long> cartIds);
 
     /**
-     * 根据提交信息生成订单
+     * 鏍规嵁鎻愪氦淇℃伅鐢熸垚璁㈠崟
      */
     @Transactional
     Map<String, Object> generateOrder(OrderParam orderParam);
 
     /**
-     * 支付成功后的回调
+     * 鏀粯鎴愬姛鍚庣殑鍥炶皟
      */
     @Transactional
     Integer paySuccess(Long orderId, Integer payType);
 
     /**
-     * 自动取消超时订单
+     * 鑷姩鍙栨秷瓒呮椂璁㈠崟
      */
     @Transactional
     Integer cancelTimeOutOrder();
 
     /**
-     * 取消单个超时订单
+     * 鍙栨秷鍗曚釜瓒呮椂璁㈠崟
      */
     @Transactional
     void cancelOrder(Long orderId);
 
     /**
-     * 发送延迟消息取消订�?
+     * 鍙戦€佸欢杩熸秷鎭彇娑堣鍗?
      */
     void sendDelayMessageCancelOrder(Long orderId);
 
     /**
-     * 确认收货
+     * 纭鏀惰揣
      */
     void confirmReceiveOrder(Long orderId);
 
     /**
-     * 分页获取用户订单
+     * 鍒嗛〉鑾峰彇鐢ㄦ埛璁㈠崟
      */
     CommonPage<OmsOrderDetail> list(Integer status, Integer pageNum, Integer pageSize);
 
     /**
-     * 根据订单ID获取订单详情
+     * 鏍规嵁璁㈠崟ID鑾峰彇璁㈠崟璇︽儏
      */
     OmsOrderDetail detail(Long orderId);
 
     /**
-     * 用户根据订单ID删除订单
+     * 鐢ㄦ埛鏍规嵁璁㈠崟ID鍒犻櫎璁㈠崟
      */
     void deleteOrder(Long orderId);
 
     /**
-     * 根据orderSn来实现的支付成功逻辑
+     * 鏍规嵁orderSn鏉ュ疄鐜扮殑鏀粯鎴愬姛閫昏緫
      */
     @Transactional
     void paySuccessByOrderSn(String orderSn, Integer payType);
 
     /**
-     * ��ʱ�����Զ��رգ�ʹ��CASԭ�Ӹ��·������ظ��رգ�
-     * @return Ӱ��������>0 ��ʾ�رճɹ���0 ��ʾ�����ѱ��رջ�״̬�������ر�
+     * 超时订单自动关闭（使用CAS原子更新防并发重复关闭）
+     * @return 影响行数，>0 表示关闭成功，0 表示订单已被关闭或状态不允许关闭
      */
     @Transactional
     Integer closeTimeoutOrder(Long orderId);

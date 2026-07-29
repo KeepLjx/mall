@@ -7,39 +7,39 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 前台订单管理自定义Dao
+ * 鍓嶅彴璁㈠崟绠＄悊鑷畾涔塂ao
  * Created by macro on 2018/9/4.
  */
 public interface PortalOrderDao {
     /**
-     * 获取订单及下单商品详�?
+     * 鑾峰彇璁㈠崟鍙婁笅鍗曞晢鍝佽鎯?
      */
     OmsOrderDetail getDetail(@Param("orderId") Long orderId);
 
     /**
-     * 修改 pms_sku_stock表的锁定库存及真实库�?
+     * 淇敼 pms_sku_stock琛ㄧ殑閿佸畾搴撳瓨鍙婄湡瀹炲簱瀛?
      */
     int updateSkuStock(@Param("itemList") List<OmsOrderItem> orderItemList);
 
     /**
-     * 获取超时订单
-     * @param minute 超时时间（分�?
+     * 鑾峰彇瓒呮椂璁㈠崟
+     * @param minute 瓒呮椂鏃堕棿锛堝垎锛?
      */
     List<OmsOrderDetail> getTimeOutOrders(@Param("minute") Integer minute);
 
     /**
-     * 批量修改订单状�?
+     * 鎵归噺淇敼璁㈠崟鐘舵€?
      */
     int updateOrderStatus(@Param("ids") List<Long> ids,@Param("status") Integer status);
 
     /**
-     * 解除取消订单的库存锁�?
+     * 瑙ｉ櫎鍙栨秷璁㈠崟鐨勫簱瀛橀攣瀹?
      */
     int releaseSkuStockLock(@Param("itemList") List<OmsOrderItem> orderItemList);
 
     /**
-     * ʹ��CASԭ�Ӹ��¹رճ�ʱ����������״̬Ϊ������ʱ�رգ�
-     * @return Ӱ��������>0 ��ʾ�رճɹ���0 ��ʾ�ѱ������̹߳رջ򶩵�״̬�ѱ��
+     * 使用CAS原子更新关闭超时订单（仅当状态为待付款时关闭）
+     * @return 影响行数，>0 表示关闭成功，0 表示已被其他线程关闭或订单状态已变更
      */
     int closeTimeoutOrder(@Param("orderId") Long orderId);
 

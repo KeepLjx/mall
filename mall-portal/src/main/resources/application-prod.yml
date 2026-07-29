@@ -7,12 +7,12 @@ spring:
     username: reader
     password: 123456
     druid:
-      initial-size: 5 #连接池初始化大小
-      min-idle: 10 #最小空闲连接数
-      max-active: 20 #最大连接数
+      initial-size: 5 #杩炴帴姹犲垵濮嬪寲澶у皬
+      min-idle: 10 #鏈€灏忕┖闂茶繛鎺ユ暟
+      max-active: 20 #鏈€澶ц繛鎺ユ暟
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数�?
-      stat-view-servlet: #访问监控网页的登录用户名和密�?
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #涓嶇粺璁¤繖浜涜姹傛暟鎹?
+      stat-view-servlet: #璁块棶鐩戞帶缃戦〉鐨勭櫥褰曠敤鎴峰悕鍜屽瘑鐮?
         login-username: druid
         login-password: druid
   data:
@@ -21,11 +21,11 @@ spring:
       port: 27017
       database: mall-port
     redis:
-      host: redis # Redis服务器地址
-      database: 0 # Redis数据库索引（默认�?0�?
-      port: 6379 # Redis服务器连接端�?
-      password: # Redis服务器连接密码（默认为空�?
-      timeout: 300ms # 连接超时时间（毫秒）
+      host: redis # Redis鏈嶅姟鍣ㄥ湴鍧€
+      database: 0 # Redis鏁版嵁搴撶储寮曪紙榛樿涓?0锛?
+      port: 6379 # Redis鏈嶅姟鍣ㄨ繛鎺ョ鍙?
+      password: # Redis鏈嶅姟鍣ㄨ繛鎺ュ瘑鐮侊紙榛樿涓虹┖锛?
+      timeout: 300ms # 杩炴帴瓒呮椂鏃堕棿锛堟绉掞級
   rabbitmq:
     host: rabbit
     port: 5672
@@ -35,7 +35,7 @@ spring:
 
 mongo:
   insert:
-    sqlEnable: true # 用于控制是否通过数据库数据来插入mongo
+    sqlEnable: true # 鐢ㄤ簬鎺у埗鏄惁閫氳繃鏁版嵁搴撴暟鎹潵鎻掑叆mongo
 
 logging:
   file:

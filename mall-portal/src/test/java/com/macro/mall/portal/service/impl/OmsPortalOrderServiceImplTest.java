@@ -79,11 +79,11 @@ import com.macro.mall.portal.service.UmsMemberReceiveAddressService;
 import com.macro.mall.portal.service.UmsMemberService;
 
 /**
- * OmsPortalOrderServiceImpl 单元测试
- * 覆盖：正常流程、参数边界、异常分支、并发场�?
+ * OmsPortalOrderServiceImpl 閸楁洖鍘撳ù瀣槸
+ * 鐟曞棛娲婇敍姘劀鐢憡绁︾粙瀣ㄢ偓浣稿棘閺佹媽绔熼悾灞烩偓浣哥磽鐢鍨庨弨顖樷偓浣歌嫙閸欐垵婧€閺?
  */
 @ExtendWith(MockitoExtension.class)
-@DisplayName("OmsPortalOrderServiceImpl 单元测试")
+@DisplayName("OmsPortalOrderServiceImpl 閸楁洖鍘撳ù瀣槸")
 class OmsPortalOrderServiceImplTest {
 
     @Mock
@@ -129,12 +129,12 @@ class OmsPortalOrderServiceImplTest {
         mockMember.setUsername("testUser");
         mockMember.setIntegration(1000);
 
-        // 注入 @Value 属�?
+        // 濞夈劌鍙?@Value 鐏炵偞鈧?
         ReflectionTestUtils.setField(orderService, "REDIS_KEY_ORDER_ID", "orderId");
         ReflectionTestUtils.setField(orderService, "REDIS_DATABASE", "mall");
     }
 
-    // ============ 辅助方法：构建测试数�? ============
+    // ============ 鏉堝懎濮弬瑙勭《閿涙碍鐎鐑樼ゴ鐠囨洘鏆熼幑? ============
 
     private CartPromotionItem buildCartPromotionItem(Long id, Long productId, Long skuId,
                                                       BigDecimal price, Integer quantity,
@@ -142,10 +142,10 @@ class OmsPortalOrderServiceImplTest {
         CartPromotionItem item = new CartPromotionItem();
         item.setId(id);
         item.setProductId(productId);
-        item.setProductName("商品" + productId);
+        item.setProductName("閸熷棗鎼? + productId);
         item.setProductPic("pic.jpg");
-        item.setProductAttr("颜色:�?");
-        item.setProductBrand("品牌A");
+        item.setProductAttr("妫版粏澹?缁?");
+        item.setProductBrand("閸濅胶澧滱");
         item.setProductSn("SN" + productId);
         item.setPrice(price);
         item.setQuantity(quantity);
@@ -153,7 +153,7 @@ class OmsPortalOrderServiceImplTest {
         item.setProductSkuCode("SKU" + skuId);
         item.setProductCategoryId(1L);
         item.setReduceAmount(reduceAmount);
-        item.setPromotionMessage("满减促销");
+        item.setPromotionMessage("濠娾€冲櫤娣囧啴鏀?);
         item.setIntegration(10);
         item.setGrowth(5);
         item.setRealStock(realStock);
@@ -163,20 +163,20 @@ class OmsPortalOrderServiceImplTest {
     private UmsMemberReceiveAddress buildAddress(Long id) {
         UmsMemberReceiveAddress address = new UmsMemberReceiveAddress();
         address.setId(id);
-        address.setName("张三");
+        address.setName("瀵姳绗?);
         address.setPhoneNumber("13800138000");
         address.setPostCode("100000");
-        address.setProvince("广东�?");
-        address.setCity("深圳�?");
-        address.setRegion("南山�?");
-        address.setDetailAddress("科技园路1�?");
+        address.setProvince("楠炲じ绗㈤惇?");
+        address.setCity("濞ｅ崬婀风敮?");
+        address.setRegion("閸楁鍖楅崠?");
+        address.setDetailAddress("缁夋垶濡ч崶顓＄熅1閸?");
         return address;
     }
 
     private UmsIntegrationConsumeSetting buildIntegrationSetting() {
         UmsIntegrationConsumeSetting setting = new UmsIntegrationConsumeSetting();
         setting.setId(1L);
-        setting.setCouponStatus(1); // 1=可与优惠券共�?
+        setting.setCouponStatus(1); // 1=閸欘垯绗屾导妯诲劕閸掔鍙￠悽?
         setting.setUseUnit(100);
         setting.setMaxPercentPerOrder(50);
         return setting;
@@ -188,14 +188,14 @@ class OmsPortalOrderServiceImplTest {
         return buildCartPromotionItem(id, productId, skuId, price, quantity, BigDecimal.ZERO, realStock);
     }
 
-    // ============ 第一部分：generateConfirmOrder ============
+    // ============ 缁楊兛绔撮柈銊ュ瀻閿涙enerateConfirmOrder ============
 
     @Nested
-    @DisplayName("generateConfirmOrder - 正常流程")
+    @DisplayName("generateConfirmOrder - 濮濓絽鐖跺ù浣衡柤")
     class GenerateConfirmOrder_Normal {
 
         @Test
-        @DisplayName("正常流程：购物车有商品，用户有积分，应返回完整确认单")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙俺鍠橀悧鈺勬簠閺堝鏅㈤崫渚婄礉閻劍鍩涢張澶屝濋崚鍡礉鎼存棁绻戦崶鐐茬暚閺佸鈥樼拋銈呭礋")
         void shouldReturnCompleteConfirmOrderWhenCartHasItems() {
             // Given
             List<Long> cartIds = Arrays.asList(1L, 2L);
@@ -224,7 +224,7 @@ class OmsPortalOrderServiceImplTest {
             assertEquals(1000, result.getMemberIntegration());
             assertNotNull(result.getIntegrationConsumeSetting());
             assertNotNull(result.getCalcAmount());
-            // 验证金额计算：item1: 99*2=198, item2: 50*1=50; total=248; promotion=10*2+5*1=25; pay=248-25=223
+            // 妤犲矁鐦夐柌鎴︻杺鐠侊紕鐣婚敍姝﹖em1: 99*2=198, item2: 50*1=50; total=248; promotion=10*2+5*1=25; pay=248-25=223
             assertEquals(new BigDecimal("248.0"), result.getCalcAmount().getTotalAmount().setScale(1));
             assertEquals(new BigDecimal("25.0"), result.getCalcAmount().getPromotionAmount().setScale(1));
             assertEquals(new BigDecimal("223.0"), result.getCalcAmount().getPayAmount().setScale(1));
@@ -232,7 +232,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("正常流程：购物车有商品，用户无积分，确认单仍应正常返�?")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙俺鍠橀悧鈺勬簠閺堝鏅㈤崫渚婄礉閻劍鍩涢弮鐘敌濋崚鍡礉绾喛顓婚崡鏇氱矝鎼存梹顒滅敮姝岀箲閸?")
         void shouldReturnConfirmOrderWhenMemberHasNoIntegration() {
             // Given
             mockMember.setIntegration(null);
@@ -255,11 +255,11 @@ class OmsPortalOrderServiceImplTest {
     }
 
     @Nested
-    @DisplayName("generateConfirmOrder - 参数边界")
+    @DisplayName("generateConfirmOrder - 閸欏倹鏆熸潏鍦櫕")
     class GenerateConfirmOrder_Boundary {
 
         @Test
-        @DisplayName("边界：cartIds为空列表，应返回空确认单")
+        @DisplayName("鏉堝湱鏅敍姝漚rtIds娑撹櫣鈹栭崚妤勩€冮敍灞界安鏉╂柨娲栫粚铏光€樼拋銈呭礋")
         void shouldReturnEmptyConfirmOrderWhenCartIdsIsEmpty() {
             List<Long> cartIds = Collections.emptyList();
             when(memberService.getCurrentMember()).thenReturn(mockMember);
@@ -278,7 +278,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("边界：null cartIds (会传递到 cartItemService)")
+        @DisplayName("鏉堝湱鏅敍姝痷ll cartIds (娴兼矮绱堕柅鎺戝煂 cartItemService)")
         void shouldHandleNullCartIds() {
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(cartItemService.listPromotion(eq(1L), isNull())).thenReturn(Collections.emptyList());
@@ -293,14 +293,14 @@ class OmsPortalOrderServiceImplTest {
         }
     }
 
-    // ============ 第二部分：generateOrder ============
+    // ============ 缁楊兛绨╅柈銊ュ瀻閿涙enerateOrder ============
 
     @Nested
-    @DisplayName("generateOrder - 正常流程")
+    @DisplayName("generateOrder - 濮濓絽鐖跺ù浣衡柤")
     class GenerateOrder_Normal {
 
         /**
-         * 辅助方法：设�? generateOrder 的公�? mock
+         * 鏉堝懎濮弬瑙勭《閿涙俺顔曠純? generateOrder 閻ㄥ嫬鍙曢崗? mock
          */
         private void setupGenerateOrderMocks(List<Long> cartIds, List<CartPromotionItem> cartItems,
                                               Long addressId) {
@@ -313,7 +313,7 @@ class OmsPortalOrderServiceImplTest {
             orderSetting.setNormalOrderOvertime(120);
             when(orderSettingMapper.selectByPrimaryKey(1L)).thenReturn(orderSetting);
             when(redisService.incr(anyString(), eq(1L))).thenReturn(1L);
-            // mock orderMapper.insert 设置 order.getId()
+            // mock orderMapper.insert 鐠佸墽鐤?order.getId()
             doAnswer(invocation -> {
                 OmsOrder o = invocation.getArgument(0);
                 o.setId(888L);
@@ -325,7 +325,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("正常流程：不使用优惠券、不使用积分下单")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙矮绗夋担璺ㄦ暏娴兼ɑ鍎崚鎼炩偓浣风瑝娴ｈ法鏁ょ粔顖氬瀻娑撳宕?)
         void shouldGenerateOrderWithoutCouponAndIntegration() {
             // Given
             List<Long> cartIds = Arrays.asList(1L);
@@ -354,7 +354,7 @@ class OmsPortalOrderServiceImplTest {
             assertNotNull(result);
             OmsOrder order = (OmsOrder) result.get("order");
             assertNotNull(order);
-            assertEquals(0, order.getStatus()); // 待付�?
+            assertEquals(0, order.getStatus()); // 瀵板懍绮▎?
             assertEquals(1, order.getPayType());
             assertEquals(new BigDecimal("0"), order.getCouponAmount());
             assertEquals(new BigDecimal("0"), order.getIntegrationAmount());
@@ -362,18 +362,18 @@ class OmsPortalOrderServiceImplTest {
             assertEquals(mockMember.getId(), order.getMemberId());
             assertNotNull(order.getOrderSn());
 
-            // 验证业务状态：订单已插�?
+            // 妤犲矁鐦夋稉姘閻樿埖鈧緤绱扮拋銏犲礋瀹稿弶褰冮崗?
             verify(orderMapper).insert(any(OmsOrder.class));
-            // 验证订单项已插入
+            // 妤犲矁鐦夌拋銏犲礋妞ょ懓鍑￠幓鎺戝弳
             verify(orderItemDao).insertList(anyList());
-            // 验证购物车已删除
+            // 妤犲矁鐦夌拹顓犲⒖鏉烇箑鍑￠崚鐘绘珟
             verify(cartItemService).delete(eq(1L), anyList());
-            // 验证发送延迟消�?
+            // 妤犲矁鐦夐崣鎴︹偓浣告鏉╃喐绉烽幁?
             verify(cancelOrderSender).sendMessage(eq(888L), anyLong());
         }
 
         @Test
-        @DisplayName("正常流程：使用优惠券和使用积分下�?")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙矮濞囬悽銊ょ喘閹姴鍩滈崪灞煎▏閻劎袧閸掑棔绗呴崡?")
         void shouldGenerateOrderWithCouponAndIntegration() {
             // Given
             List<Long> cartIds = Arrays.asList(1L);
@@ -391,16 +391,16 @@ class OmsPortalOrderServiceImplTest {
 
             setupGenerateOrderMocks(cartIds, Collections.singletonList(item), addressId);
 
-            // mock 优惠�?
+            // mock 娴兼ɑ鍎崚?
             SmsCoupon coupon = new SmsCoupon();
             coupon.setId(couponId);
             coupon.setAmount(new BigDecimal("50.00"));
-            coupon.setUseType(0); // 全场通用
+            coupon.setUseType(0); // 閸忋劌婧€闁氨鏁?
             SmsCouponHistoryDetail historyDetail = new SmsCouponHistoryDetail();
             historyDetail.setCoupon(coupon);
             when(memberCouponService.listCart(anyList(), eq(1))).thenReturn(Collections.singletonList(historyDetail));
 
-            // mock 积分设置
+            // mock 缁夘垰鍨庣拋鍓х枂
             UmsIntegrationConsumeSetting integrationSetting = buildIntegrationSetting();
             when(integrationConsumeSettingMapper.selectByPrimaryKey(1L)).thenReturn(integrationSetting);
 
@@ -410,7 +410,7 @@ class OmsPortalOrderServiceImplTest {
             when(skuStockMapper.selectByPrimaryKey(1001L)).thenReturn(skuStock);
             when(skuStockMapper.updateByPrimaryKeySelective(any())).thenReturn(1);
 
-            // mock 优惠券状态更�?
+            // mock 娴兼ɑ鍎崚鍝ュЦ閹焦娲块弬?
             when(couponHistoryMapper.selectByExample(any())).thenReturn(Collections.emptyList());
 
             // When
@@ -420,35 +420,35 @@ class OmsPortalOrderServiceImplTest {
             assertNotNull(result);
             OmsOrder order = (OmsOrder) result.get("order");
 
-            // 验证订单业务状�?
+            // 妤犲矁鐦夌拋銏犲礋娑撴艾濮熼悩鑸碘偓?
             assertEquals(0, order.getStatus());
             assertEquals(couponId, order.getCouponId());
             assertTrue(order.getCouponAmount().compareTo(BigDecimal.ZERO) > 0);
             assertTrue(order.getIntegrationAmount().compareTo(BigDecimal.ZERO) > 0);
             assertEquals(200, order.getUseIntegration().intValue());
 
-            // 验证积分扣减
+            // 妤犲矁鐦夌粔顖氬瀻閹碉絽鍣?
             verify(memberService).updateIntegration(eq(1L), eq(800)); // 1000-200
         }
     }
 
     @Nested
-    @DisplayName("generateOrder - 参数边界")
+    @DisplayName("generateOrder - 閸欏倹鏆熸潏鍦櫕")
     class GenerateOrder_Boundary {
 
         @Test
-        @DisplayName("边界：收货地址ID为null，应抛出ApiException")
+        @DisplayName("鏉堝湱鏅敍姘暪鐠愌冩勾閸р偓ID娑撶皠ull閿涘苯绨查幎娑樺毉ApiException")
         void shouldThrowExceptionWhenAddressIdIsNull() {
             OrderParam orderParam = new OrderParam();
             orderParam.setMemberReceiveAddressId(null);
 
             ApiException exception = assertThrows(ApiException.class,
                     () -> orderService.generateOrder(orderParam));
-            assertEquals("请选择收货地址�?", exception.getMessage());
+            assertEquals("鐠囩兘鈧瀚ㄩ弨鎯版彛閸︽澘娼冮敍?", exception.getMessage());
         }
 
         @Test
-        @DisplayName("边界：购物车商品库存不足，应抛出ApiException")
+        @DisplayName("鏉堝湱鏅敍姘冲枠閻椻晞婧呴崯鍡楁惂鎼存挸鐡ㄦ稉宥堝喕閿涘苯绨查幎娑樺毉ApiException")
         void shouldThrowExceptionWhenStockInsufficient() {
             List<Long> cartIds = Arrays.asList(1L);
             CartPromotionItem item = buildCartPromotionItemWithRealStock(1L, 100L, 1001L,
@@ -464,11 +464,11 @@ class OmsPortalOrderServiceImplTest {
 
             ApiException exception = assertThrows(ApiException.class,
                     () -> orderService.generateOrder(orderParam));
-            assertEquals("库存不足，无法下�?", exception.getMessage());
+            assertEquals("鎼存挸鐡ㄦ稉宥堝喕閿涘本妫ゅ▔鏇氱瑓閸?", exception.getMessage());
         }
 
         @Test
-        @DisplayName("边界：优惠券不可用，应抛出ApiException")
+        @DisplayName("鏉堝湱鏅敍姘喘閹姴鍩滄稉宥呭讲閻㈩煉绱濇惔鏃€濮忛崙绡坧iException")
         void shouldThrowExceptionWhenCouponNotAvailable() {
             List<Long> cartIds = Arrays.asList(1L);
             CartPromotionItem item = buildCartPromotionItemWithRealStock(1L, 100L, 1001L,
@@ -478,7 +478,7 @@ class OmsPortalOrderServiceImplTest {
             orderParam.setMemberReceiveAddressId(1L);
             orderParam.setCartIds(cartIds);
             orderParam.setPayType(1);
-            orderParam.setCouponId(999L); // 不存在的优惠�?
+            orderParam.setCouponId(999L); // 娑撳秴鐡ㄩ崷銊ф畱娴兼ɑ鍎崚?
 
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(cartItemService.listPromotion(1L, cartIds)).thenReturn(Collections.singletonList(item));
@@ -486,11 +486,11 @@ class OmsPortalOrderServiceImplTest {
 
             ApiException exception = assertThrows(ApiException.class,
                     () -> orderService.generateOrder(orderParam));
-            assertEquals("该优惠券不可�?", exception.getMessage());
+            assertEquals("鐠囥儰绱幆鐘插煖娑撳秴褰查悽?", exception.getMessage());
         }
 
         @Test
-        @DisplayName("边界：积分不可用（超过用户积分），应抛出ApiException")
+        @DisplayName("鏉堝湱鏅敍姘毙濋崚鍡曠瑝閸欘垳鏁ら敍鍫ｇТ鏉╁洨鏁ら幋椋幮濋崚鍡礆閿涘苯绨查幎娑樺毉ApiException")
         void shouldThrowExceptionWhenIntegrationExceeds() {
             List<Long> cartIds = Arrays.asList(1L);
             CartPromotionItem item = buildCartPromotionItemWithRealStock(1L, 100L, 1001L,
@@ -501,7 +501,7 @@ class OmsPortalOrderServiceImplTest {
             orderParam.setCartIds(cartIds);
             orderParam.setPayType(1);
             orderParam.setCouponId(null);
-            orderParam.setUseIntegration(2000); // 超过用户积分1000
+            orderParam.setUseIntegration(2000); // 鐡掑懓绻冮悽銊﹀煕缁夘垰鍨?000
 
             mockMember.setIntegration(1000);
             when(memberService.getCurrentMember()).thenReturn(mockMember);
@@ -509,16 +509,16 @@ class OmsPortalOrderServiceImplTest {
 
             ApiException exception = assertThrows(ApiException.class,
                     () -> orderService.generateOrder(orderParam));
-            assertEquals("积分不可�?", exception.getMessage());
+            assertEquals("缁夘垰鍨庢稉宥呭讲閻?", exception.getMessage());
         }
     }
 
     @Nested
-    @DisplayName("generateOrder - 异常分支")
+    @DisplayName("generateOrder - 瀵倸鐖堕崚鍡樻暜")
     class GenerateOrder_Exception {
 
         @Test
-        @DisplayName("异常：积分不足最低使用门槛，积分返回0不可�?")
+        @DisplayName("瀵倸鐖堕敍姘毙濋崚鍡曠瑝鐡掕櫕娓舵担搴濆▏閻劑妫Σ娑崇礉缁夘垰鍨庢潻鏂挎礀0娑撳秴褰查悽?")
         void shouldFailWhenIntegrationBelowThreshold() {
             List<Long> cartIds = Arrays.asList(1L);
             CartPromotionItem item = buildCartPromotionItemWithRealStock(1L, 100L, 1001L,
@@ -529,7 +529,7 @@ class OmsPortalOrderServiceImplTest {
             orderParam.setCartIds(cartIds);
             orderParam.setPayType(1);
             orderParam.setCouponId(null);
-            orderParam.setUseIntegration(50); // 低于 useUnit=100
+            orderParam.setUseIntegration(50); // 娴ｅ簼绨?useUnit=100
 
             mockMember.setIntegration(500);
             when(memberService.getCurrentMember()).thenReturn(mockMember);
@@ -540,11 +540,11 @@ class OmsPortalOrderServiceImplTest {
 
             ApiException exception = assertThrows(ApiException.class,
                     () -> orderService.generateOrder(orderParam));
-            assertEquals("积分不可�?", exception.getMessage());
+            assertEquals("缁夘垰鍨庢稉宥呭讲閻?", exception.getMessage());
         }
 
         @Test
-        @DisplayName("异常：积分超过最大抵扣百分比，积分不可用")
+        @DisplayName("瀵倸鐖堕敍姘毙濋崚鍡氱Т鏉╁洦娓舵径褎濮烽幍锝囨閸掑棙鐦敍宀€袧閸掑棔绗夐崣顖滄暏")
         void shouldFailWhenIntegrationExceedsMaxPercent() {
             List<Long> cartIds = Arrays.asList(1L);
             CartPromotionItem item = buildCartPromotionItemWithRealStock(1L, 100L, 1001L,
@@ -555,7 +555,7 @@ class OmsPortalOrderServiceImplTest {
             orderParam.setCartIds(cartIds);
             orderParam.setPayType(1);
             orderParam.setCouponId(null);
-            orderParam.setUseIntegration(6000); // 6000/100=60�? > 100*50%=50�?
+            orderParam.setUseIntegration(6000); // 6000/100=60閸? > 100*50%=50閸?
 
             mockMember.setIntegration(10000);
             when(memberService.getCurrentMember()).thenReturn(mockMember);
@@ -568,18 +568,18 @@ class OmsPortalOrderServiceImplTest {
 
             ApiException exception = assertThrows(ApiException.class,
                     () -> orderService.generateOrder(orderParam));
-            assertEquals("积分不可�?", exception.getMessage());
+            assertEquals("缁夘垰鍨庢稉宥呭讲閻?", exception.getMessage());
         }
     }
 
-    // ============ 第三部分：paySuccess ============
+    // ============ 缁楊兛绗侀柈銊ュ瀻閿涙aySuccess ============
 
     @Nested
     @DisplayName("paySuccess")
     class PaySuccessTest {
 
         @Test
-        @DisplayName("正常流程：支付成功，更新订单状态为待发货，扣减真实库存")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙碍鏁禒妯诲灇閸旂噦绱濋弴瀛樻煀鐠併垹宕熼悩鑸碘偓浣疯礋瀵板懎褰傜拹褝绱濋幍锝呭櫤閻喎鐤勬惔鎾崇摠")
         void shouldUpdateOrderStatusAndDeductStock() {
             Long orderId = 100L;
             Integer payType = 1;
@@ -593,7 +593,7 @@ class OmsPortalOrderServiceImplTest {
             Integer count = orderService.paySuccess(orderId, payType);
 
             assertEquals(5, count);
-            // 验证订单状态被设置�?1（待发货�?
+            // 妤犲矁鐦夌拋銏犲礋閻樿埖鈧浇顫︾拋鍓х枂娑?1閿涘牆绶熼崣鎴ｆ彛閿?
             ArgumentCaptor<OmsOrder> orderCaptor = ArgumentCaptor.forClass(OmsOrder.class);
             verify(orderMapper).updateByPrimaryKeySelective(orderCaptor.capture());
             OmsOrder captured = orderCaptor.getValue();
@@ -604,7 +604,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("边界：订单无商品项，返回0")
+        @DisplayName("鏉堝湱鏅敍姘愁吂閸楁洘妫ら崯鍡楁惂妞ょ櫢绱濇潻鏂挎礀0")
         void shouldReturnZeroWhenNoOrderItems() {
             Long orderId = 200L;
             when(orderMapper.updateByPrimaryKeySelective(any())).thenReturn(1);
@@ -619,14 +619,14 @@ class OmsPortalOrderServiceImplTest {
         }
     }
 
-    // ============ 第四部分：cancelTimeOutOrder ============
+    // ============ 缁楊剙娲撻柈銊ュ瀻閿涙瓭ancelTimeOutOrder ============
 
     @Nested
     @DisplayName("cancelTimeOutOrder")
     class CancelTimeOutOrderTest {
 
         @Test
-        @DisplayName("正常流程：存在超时订单，取消并返还库�?/优惠�?/积分")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙艾鐡ㄩ崷銊ㄧТ閺冩儼顓归崡鏇礉閸欐牗绉烽獮鎯扮箲鏉╂ê绨辩€?/娴兼ɑ鍎崚?/缁夘垰鍨?)
         void shouldCancelTimeoutOrdersAndRefund() {
             OmsOrderSetting setting = new OmsOrderSetting();
             setting.setId(1L);
@@ -637,7 +637,7 @@ class OmsPortalOrderServiceImplTest {
             detail1.setId(1L);
             detail1.setMemberId(10L);
             detail1.setCouponId(null);
-            detail1.setUseIntegration(null); // 未使用积�?
+            detail1.setUseIntegration(null); // 閺堫亙濞囬悽銊濋崚?
             detail1.setOrderItemList(Collections.emptyList());
 
             OmsOrderDetail detail2 = new OmsOrderDetail();
@@ -653,7 +653,7 @@ class OmsPortalOrderServiceImplTest {
             when(portalOrderDao.releaseSkuStockLock(anyList())).thenReturn(1);
             when(couponHistoryMapper.selectByExample(any())).thenReturn(Collections.emptyList());
 
-            // detail2 使用积分的会�?
+            // detail2 娴ｈ法鏁ょ粔顖氬瀻閻ㄥ嫪绱伴崨?
             UmsMember member2 = new UmsMember();
             member2.setId(20L);
             member2.setIntegration(500);
@@ -663,16 +663,16 @@ class OmsPortalOrderServiceImplTest {
             Integer count = orderService.cancelTimeOutOrder();
 
             assertEquals(2, count);
-            // 验证订单状态被批量更新�?4
+            // 妤犲矁鐦夌拋銏犲礋閻樿埖鈧浇顫﹂幍褰掑櫤閺囧瓨鏌婃稉?4
             verify(portalOrderDao).updateOrderStatus(anyList(), eq(4));
-            // 验证库存已释�?
+            // 妤犲矁鐦夋惔鎾崇摠瀹告煡鍣撮弨?
             verify(portalOrderDao, times(2)).releaseSkuStockLock(anyList());
-            // 验证积分返还
+            // 妤犲矁鐦夌粔顖氬瀻鏉╂棁绻?
             verify(memberService).updateIntegration(eq(20L), eq(600));
         }
 
         @Test
-        @DisplayName("边界：无超时订单，返�?0")
+        @DisplayName("鏉堝湱鏅敍姘￥鐡掑懏妞傜拋銏犲礋閿涘矁绻戦崶?0")
         void shouldReturnZeroWhenNoTimeoutOrders() {
             OmsOrderSetting setting = new OmsOrderSetting();
             setting.setId(1L);
@@ -687,14 +687,14 @@ class OmsPortalOrderServiceImplTest {
         }
     }
 
-    // ============ 第五部分：cancelOrder ============
+    // ============ 缁楊兛绨查柈銊ュ瀻閿涙瓭ancelOrder ============
 
     @Nested
     @DisplayName("cancelOrder")
     class CancelOrderTest {
 
         @Test
-        @DisplayName("正常流程：存在待付款订单，取消成�?")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙艾鐡ㄩ崷銊ョ窡娴犳ɑ顑欑拋銏犲礋閿涘苯褰囧☉鍫熷灇閸?")
         void shouldCancelExistingOrder() {
             Long orderId = 100L;
             OmsOrder cancelOrder = new OmsOrder();
@@ -714,29 +714,29 @@ class OmsPortalOrderServiceImplTest {
 
             orderService.cancelOrder(orderId);
 
-            // 验证订单状态改�?4（已关闭�?
+            // 妤犲矁鐦夌拋銏犲礋閻樿埖鈧焦鏁兼稉?4閿涘牆鍑￠崗鎶芥４閿?
             ArgumentCaptor<OmsOrder> orderCaptor = ArgumentCaptor.forClass(OmsOrder.class);
             verify(orderMapper).updateByPrimaryKeySelective(orderCaptor.capture());
             assertEquals(4, orderCaptor.getValue().getStatus());
-            // 验证库存释放
+            // 妤犲矁鐦夋惔鎾崇摠闁插﹥鏂?
             verify(portalOrderDao).releaseSkuStockLock(anyList());
         }
 
         @Test
-        @DisplayName("边界：订单不存在或状态不�?0，静默返�?")
+        @DisplayName("鏉堝湱鏅敍姘愁吂閸楁洑绗夌€涙ê婀幋鏍Ц閹椒绗夐弰?0閿涘矂娼ゆ妯跨箲閸?")
         void shouldSilentlyReturnWhenOrderNotFound() {
             when(orderMapper.selectByExample(any(OmsOrderExample.class)))
                     .thenReturn(Collections.emptyList());
 
             orderService.cancelOrder(999L);
 
-            // 不应调用任何后续操作
+            // 娑撳秴绨茬拫鍐暏娴犺缍嶉崥搴ｇ敾閹垮秳缍?
             verify(orderMapper, never()).updateByPrimaryKeySelective(any());
             verify(portalOrderDao, never()).releaseSkuStockLock(anyList());
         }
 
         @Test
-        @DisplayName("边界：订单存在但deleteStatus不为0，静默返�?")
+        @DisplayName("鏉堝湱鏅敍姘愁吂閸楁洖鐡ㄩ崷銊ょ稻deleteStatus娑撳秳璐?閿涘矂娼ゆ妯跨箲閸?")
         void shouldSilentlyReturnWhenDeleteStatusNotZero() {
             when(orderMapper.selectByExample(any(OmsOrderExample.class)))
                     .thenReturn(Collections.emptyList());
@@ -747,20 +747,20 @@ class OmsPortalOrderServiceImplTest {
         }
     }
 
-    // ============ 第六部分：confirmReceiveOrder ============
+    // ============ 缁楊剙鍙氶柈銊ュ瀻閿涙瓭onfirmReceiveOrder ============
 
     @Nested
     @DisplayName("confirmReceiveOrder")
     class ConfirmReceiveOrderTest {
 
         @Test
-        @DisplayName("正常流程：用户确认自己的已发货订�?")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙氨鏁ら幋椋庘€樼拋銈堝殰瀹歌京娈戝鎻掑絺鐠愌嗩吂閸?")
         void shouldConfirmOwnShippedOrder() {
             Long orderId = 100L;
             OmsOrder order = new OmsOrder();
             order.setId(orderId);
             order.setMemberId(1L);
-            order.setStatus(2); // 已发�?
+            order.setStatus(2); // 瀹告彃褰傜拹?
 
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(order);
@@ -771,59 +771,59 @@ class OmsPortalOrderServiceImplTest {
             ArgumentCaptor<OmsOrder> captor = ArgumentCaptor.forClass(OmsOrder.class);
             verify(orderMapper).updateByPrimaryKey(captor.capture());
             OmsOrder updated = captor.getValue();
-            assertEquals(3, updated.getStatus()); // 已完�?
+            assertEquals(3, updated.getStatus()); // 瀹告彃鐣幋?
             assertEquals(1, updated.getConfirmStatus());
             assertNotNull(updated.getReceiveTime());
         }
 
         @Test
-        @DisplayName("异常：确认他人订单，应抛出ApiException")
+        @DisplayName("瀵倸鐖堕敍姘扁€樼拋銈勭铂娴滈缚顓归崡鏇礉鎼存梹濮忛崙绡坧iException")
         void shouldThrowExceptionWhenConfirmOthersOrder() {
             Long orderId = 100L;
             OmsOrder order = new OmsOrder();
             order.setId(orderId);
-            order.setMemberId(999L); // 不是当前用户
+            order.setMemberId(999L); // 娑撳秵妲歌ぐ鎾冲閻劍鍩?
 
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(order);
 
             ApiException ex = assertThrows(ApiException.class,
                     () -> orderService.confirmReceiveOrder(orderId));
-            assertEquals("不能确认他人订单�?", ex.getMessage());
+            assertEquals("娑撳秷鍏樼涵顔款吇娴犳牔姹夌拋銏犲礋閿?", ex.getMessage());
         }
 
         @Test
-        @DisplayName("异常：订单未发货，应抛出ApiException")
+        @DisplayName("瀵倸鐖堕敍姘愁吂閸楁洘婀崣鎴ｆ彛閿涘苯绨查幎娑樺毉ApiException")
         void shouldThrowExceptionWhenOrderNotShipped() {
             Long orderId = 100L;
             OmsOrder order = new OmsOrder();
             order.setId(orderId);
             order.setMemberId(1L);
-            order.setStatus(1); // 待发货，不是2
+            order.setStatus(1); // 瀵板懎褰傜拹褝绱濇稉宥嗘Ц2
 
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(order);
 
             ApiException ex = assertThrows(ApiException.class,
                     () -> orderService.confirmReceiveOrder(orderId));
-            assertEquals("该订单还未发货！", ex.getMessage());
+            assertEquals("鐠囥儴顓归崡鏇＄箷閺堫亜褰傜拹褝绱?, ex.getMessage());
         }
     }
 
-    // ============ 第七部分：deleteOrder ============
+    // ============ 缁楊兛绔烽柈銊ュ瀻閿涙瓰eleteOrder ============
 
     @Nested
     @DisplayName("deleteOrder")
     class DeleteOrderTest {
 
         @Test
-        @DisplayName("正常流程：删除自己已完成订单")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙艾鍨归梽銈堝殰瀹稿崬鍑＄€瑰本鍨氱拋銏犲礋")
         void shouldDeleteOwnCompletedOrder() {
             Long orderId = 100L;
             OmsOrder order = new OmsOrder();
             order.setId(orderId);
             order.setMemberId(1L);
-            order.setStatus(3); // 已完�?
+            order.setStatus(3); // 瀹告彃鐣幋?
 
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(order);
@@ -837,13 +837,13 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("正常流程：删除自己已关闭订单")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙艾鍨归梽銈堝殰瀹稿崬鍑￠崗鎶芥４鐠併垹宕?)
         void shouldDeleteOwnClosedOrder() {
             Long orderId = 200L;
             OmsOrder order = new OmsOrder();
             order.setId(orderId);
             order.setMemberId(1L);
-            order.setStatus(4); // 已关�?
+            order.setStatus(4); // 瀹告彃鍙ч梻?
 
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(order);
@@ -855,7 +855,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("异常：删除他人订单，应抛出ApiException")
+        @DisplayName("瀵倸鐖堕敍姘灩闂勩倓绮禍楦款吂閸楁洩绱濇惔鏃€濮忛崙绡坧iException")
         void shouldThrowExceptionWhenDeleteOthersOrder() {
             Long orderId = 100L;
             OmsOrder order = new OmsOrder();
@@ -867,35 +867,35 @@ class OmsPortalOrderServiceImplTest {
 
             ApiException ex = assertThrows(ApiException.class,
                     () -> orderService.deleteOrder(orderId));
-            assertEquals("不能删除他人订单�?", ex.getMessage());
+            assertEquals("娑撳秷鍏橀崚鐘绘珟娴犳牔姹夌拋銏犲礋閿?", ex.getMessage());
         }
 
         @Test
-        @DisplayName("异常：删除待付款订单，应抛出ApiException")
+        @DisplayName("瀵倸鐖堕敍姘灩闂勩倕绶熸禒妯活儥鐠併垹宕熼敍灞界安閹舵稑鍤瑼piException")
         void shouldThrowExceptionWhenOrderIsPending() {
             Long orderId = 100L;
             OmsOrder order = new OmsOrder();
             order.setId(orderId);
             order.setMemberId(1L);
-            order.setStatus(0); // 待付款，�?3/4
+            order.setStatus(0); // 瀵板懍绮▎鎾呯礉闂?3/4
 
             when(memberService.getCurrentMember()).thenReturn(mockMember);
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(order);
 
             ApiException ex = assertThrows(ApiException.class,
                     () -> orderService.deleteOrder(orderId));
-            assertEquals("只能删除已完成或已关闭的订单�?", ex.getMessage());
+            assertEquals("閸欘亣鍏橀崚鐘绘珟瀹告彃鐣幋鎰灗瀹告彃鍙ч梻顓犳畱鐠併垹宕熼敍?", ex.getMessage());
         }
     }
 
-    // ============ 第八部分：detail ============
+    // ============ 缁楊剙鍙撻柈銊ュ瀻閿涙瓰etail ============
 
     @Nested
     @DisplayName("detail")
     class DetailTest {
 
         @Test
-        @DisplayName("正常流程：获取订单详情，含订单项")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙俺骞忛崣鏍吂閸楁洝顕涢幆鍜冪礉閸氼偉顓归崡鏇€?)
         void shouldReturnOrderDetailWithItems() {
             Long orderId = 100L;
             OmsOrder order = new OmsOrder();
@@ -906,11 +906,11 @@ class OmsPortalOrderServiceImplTest {
             OmsOrderItem item1 = new OmsOrderItem();
             item1.setId(1L);
             item1.setOrderId(orderId);
-            item1.setProductName("商品1");
+            item1.setProductName("閸熷棗鎼?");
             OmsOrderItem item2 = new OmsOrderItem();
             item2.setId(2L);
             item2.setOrderId(orderId);
-            item2.setProductName("商品2");
+            item2.setProductName("閸熷棗鎼?");
             List<OmsOrderItem> items = Arrays.asList(item1, item2);
 
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(order);
@@ -925,7 +925,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("边界：订单不存在，返回detail为null")
+        @DisplayName("鏉堝湱鏅敍姘愁吂閸楁洑绗夌€涙ê婀敍宀冪箲閸ョ€宔tail娑撶皠ull")
         void shouldHandleNullOrder() {
             Long orderId = 999L;
             when(orderMapper.selectByPrimaryKey(orderId)).thenReturn(null);
@@ -933,19 +933,19 @@ class OmsPortalOrderServiceImplTest {
 
             OmsOrderDetail detail = orderService.detail(orderId);
 
-            assertNotNull(detail); // BeanUtil.copyProperties 创建了空对象
+            assertNotNull(detail); // BeanUtil.copyProperties 閸掓稑缂撴禍鍡欌敄鐎电钖?
             assertNull(detail.getId());
         }
     }
 
-    // ============ 第九部分：list ============
+    // ============ 缁楊兛绡€闁劌鍨庨敍姝璱st ============
 
     @Nested
     @DisplayName("list")
     class ListTest {
 
         @Test
-        @DisplayName("正常流程：status=-1 查询所有订单，返回分页结果")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙tatus=-1 閺屻儴顕楅幍鈧張澶庮吂閸楁洩绱濇潻鏂挎礀閸掑棝銆夌紒鎾寸亯")
         void shouldListAllOrdersWhenStatusIsMinusOne() {
             try (MockedStatic<PageHelper> pageHelperMock = mockStatic(PageHelper.class)) {
                 OmsOrder order1 = new OmsOrder();
@@ -976,13 +976,13 @@ class OmsPortalOrderServiceImplTest {
 
                 assertNotNull(result);
                 assertEquals(2, result.getList().size());
-                // 验证 status=-1 被转�? null
+                // 妤犲矁鐦?status=-1 鐞氼偉娴嗘稉? null
                 verify(memberService).getCurrentMember();
             }
         }
 
         @Test
-        @DisplayName("边界：查询结果为空，返回空分�?")
+        @DisplayName("鏉堝湱鏅敍姘叀鐠囥垻绮ㄩ弸婊€璐熺粚鐚寸礉鏉╂柨娲栫粚鍝勫瀻妞?")
         void shouldReturnEmptyPageWhenNoOrders() {
             try (MockedStatic<PageHelper> pageHelperMock = mockStatic(PageHelper.class)) {
                 when(memberService.getCurrentMember()).thenReturn(mockMember);
@@ -992,19 +992,19 @@ class OmsPortalOrderServiceImplTest {
                 CommonPage<OmsOrderDetail> result = orderService.list(0, 1, 10);
 
                 assertNotNull(result);
-                assertNull(result.getList()); // CollUtil.isEmpty �? return resultPage without setList
+                assertNull(result.getList()); // CollUtil.isEmpty 閳? return resultPage without setList
             }
         }
     }
 
-    // ============ 第十部分：paySuccessByOrderSn ============
+    // ============ 缁楊剙宕勯柈銊ュ瀻閿涙aySuccessByOrderSn ============
 
     @Nested
     @DisplayName("paySuccessByOrderSn")
     class PaySuccessByOrderSnTest {
 
         @Test
-        @DisplayName("正常流程：根据orderSn找到待付款订单，支付成功")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙碍鐗撮幑鐣俽derSn閹垫儳鍩屽鍛帛濞嗘崘顓归崡鏇礉閺€顖欑帛閹存劕濮?)
         void shouldPaySuccessByOrderSn() {
             String orderSn = "202607290001";
             OmsOrder order = new OmsOrder();
@@ -1027,7 +1027,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("边界：orderSn不存在或订单状态不�?0，静默返回不执行")
+        @DisplayName("鏉堝湱鏅敍姝皉derSn娑撳秴鐡ㄩ崷銊﹀灗鐠併垹宕熼悩鑸碘偓浣风瑝閺?0閿涘矂娼ゆ妯跨箲閸ョ偘绗夐幍褑顢?)
         void shouldNotPayWhenOrderNotFound() {
             when(orderMapper.selectByExample(any(OmsOrderExample.class)))
                     .thenReturn(Collections.emptyList());
@@ -1038,19 +1038,19 @@ class OmsPortalOrderServiceImplTest {
         }
     }
 
-    // ============ 第十一部分：sendDelayMessageCancelOrder ============
+    // ============ 缁楊剙宕勬稉鈧柈銊ュ瀻閿涙endDelayMessageCancelOrder ============
 
     @Nested
     @DisplayName("sendDelayMessageCancelOrder")
     class SendDelayMessageTest {
 
         @Test
-        @DisplayName("正常流程：发送带超时时间的延迟消�?")
+        @DisplayName("濮濓絽鐖跺ù浣衡柤閿涙艾褰傞柅浣哥敨鐡掑懏妞傞弮鍫曟？閻ㄥ嫬娆㈡潻鐔哥Х閹?")
         void shouldSendDelayMessageWithCorrectTimeout() {
             Long orderId = 100L;
             OmsOrderSetting setting = new OmsOrderSetting();
             setting.setId(1L);
-            setting.setNormalOrderOvertime(120); // 120分钟
+            setting.setNormalOrderOvertime(120); // 120閸掑棝鎸?
             when(orderSettingMapper.selectByPrimaryKey(1L)).thenReturn(setting);
 
             orderService.sendDelayMessageCancelOrder(orderId);
@@ -1060,7 +1060,7 @@ class OmsPortalOrderServiceImplTest {
         }
 
         @Test
-        @DisplayName("边界：超时时间为0，发�?0延迟消息")
+        @DisplayName("鏉堝湱鏅敍姘崇Т閺冭埖妞傞梻缈犺礋0閿涘苯褰傞柅?0瀵ゆ儼绻滃☉鍫熶紖")
         void shouldSendZeroDelayWhenTimeoutIsZero() {
             Long orderId = 200L;
             OmsOrderSetting setting = new OmsOrderSetting();
@@ -1074,14 +1074,14 @@ class OmsPortalOrderServiceImplTest {
         }
     }
 
-    // ============ 第十二部分：并发场景 ============
+    // ============ 缁楊剙宕勬禍宀勫劥閸掑棴绱伴獮璺哄絺閸︾儤娅?============
 
     @Nested
-    @DisplayName("并发场景")
+    @DisplayName("楠炶泛褰傞崷鐑樻珯")
     class ConcurrentTests {
 
         @Test
-        @DisplayName("并发：多个线程同时调�? cancelOrder，无异常且状态一�?")
+        @DisplayName("楠炶泛褰傞敍姘樋娑擃亞鍤庣粙瀣倱閺冩儼鐨熼悽? cancelOrder閿涘本妫ゅ鍌氱埗娑撴梻濮搁幀浣风閼?")
         void concurrentCancelOrderShouldBeThreadSafe() throws Exception {
             Long orderId = 100L;
             OmsOrder cancelOrder = new OmsOrder();
@@ -1092,7 +1092,7 @@ class OmsPortalOrderServiceImplTest {
             cancelOrder.setCouponId(null);
             cancelOrder.setUseIntegration(null);
 
-            // 第一个线程成功，后续线程 selectByExample 返回�?
+            // 缁楊兛绔存稉顏嗗殠缁嬪鍨氶崝鐕傜礉閸氬海鐢荤痪璺ㄢ柤 selectByExample 鏉╂柨娲栫粚?
             when(orderMapper.selectByExample(any(OmsOrderExample.class)))
                     .thenReturn(Collections.singletonList(cancelOrder))
                     .thenReturn(Collections.emptyList());
@@ -1124,12 +1124,12 @@ class OmsPortalOrderServiceImplTest {
 
             assertEquals(threadCount, successCount.get());
             assertEquals(0, errorCount.get());
-            // 业务状态验证：至少调用了一�? updateByPrimaryKeySelective（订单状态改�?4�?
+            // 娑撴艾濮熼悩鑸碘偓渚€鐛欑拠渚婄窗閼峰啿鐨拫鍐暏娴滃棔绔村▎? updateByPrimaryKeySelective閿涘牐顓归崡鏇犲Ц閹焦鏁兼稉?4閿?
             verify(orderMapper, atLeastOnce()).updateByPrimaryKeySelective(any());
         }
 
         @Test
-        @DisplayName("并发：多个线程同时调�? generateConfirmOrder，返回一致的确认�?")
+        @DisplayName("楠炶泛褰傞敍姘樋娑擃亞鍤庣粙瀣倱閺冩儼鐨熼悽? generateConfirmOrder閿涘矁绻戦崶鐐扮閼峰娈戠涵顔款吇閸?")
         void concurrentGenerateConfirmOrderShouldBeThreadSafe() throws Exception {
             List<Long> cartIds = Collections.singletonList(1L);
             CartPromotionItem item = buildCartPromotionItem(1L, 100L, 1001L,
@@ -1161,7 +1161,7 @@ class OmsPortalOrderServiceImplTest {
             executor.shutdown();
 
             assertEquals(threadCount, results.size());
-            // 所有线程返回的金额应一�?
+            // 閹碘偓閺堝鍤庣粙瀣箲閸ョ偟娈戦柌鎴︻杺鎼存柧绔撮懛?
             for (ConfirmOrderResult r : results) {
                 assertNotNull(r.getCalcAmount());
                 assertEquals(new BigDecimal("100").setScale(0), r.getCalcAmount().getTotalAmount().setScale(0));
